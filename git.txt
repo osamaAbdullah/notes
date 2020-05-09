@@ -1,0 +1,80 @@
+// master is default branch
+// HEAD is last commit of the current branch but you can make it point somewhere else
+
+git config --global user.name "<username>" // set yor name
+git config --global user.email "<userEmail>" // set your email
+git config --global user.email core.editor <path of executable code editor> // set default editor for git
+
+-git config --global diff.tool <p4merge>
+-git config --global difftool.p4merge.path "<path to p4merge using forward slash / >"
+-git config --global difftool.prompt false // set p4merge as your default diff tool
+
+-git config --global merge.tool <p4merge>
+-git config --global mergetool.p4merge.path "<path to p4merge using forward slash / >"
+-git config --global mergetool.prompt false // set p4merge as your default merge tool you may have to change 'C:' to '/c/'
+
+git config --global -e // open default git editor
+
+
+Git show head
+Git show // just like git log but it will also show the changes
+Git show <commit id> // show the changes in a commit
+Git ls-files // list the files that are tracked with git
+Git diff <commit id 1> <commit id 2>
+Git diff // show changes of changed file against the last commit
+Git difftool <commit id 1> <commit id 2>
+Git difftool head~1 head~2 // HEAD is equal to last commit id
+Git log --oneline
+Git revert (one of commit's that pup up from previous command)
+Git revert <commit id>   with auto commit
+Got revert <commit id> without auto commit // will revert to that commit without deleting commits after the commit that you reverted to
+
+
+Git reset --hard <commit id> // will delete any commit after that commit which you reset to
+
+git touch .gitignore //add gitignore file
+git remote add origin "link" //connect local project with server project
+git remote //see the remote of your folder in server
+git push -u origin master //push your project from local to server
+git rm <nameOfTheFile> //will remove a file from git and from folder
+git commit -am "some message" //will add and commit only that files that are already being tracked with git not new files
+git checkout <commit-id> -- <fileName> //will bring file from git reposetory to folder
+git reset HEAD <fileName> //will take file from staging area to folder from green to red
+
+
+git checkout master
+git merge <branch that you want to merge with master>
+git branch -d <branch that you merged with master>
+
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git //changing remote origin
+git remote -v //show the remote
+
+git branch <new_name> // create new branch
+git branch <new_name> <id> // if you checkout a commit from history and make changes then you can move them to new branch before going back to the latest commit
+git branch // list branches
+git checkout <branch_name> // switch between branches
+git merge <branch_name> // merge mentioned branch into current branch that you are in
+git branch -m <pld_name> <new_name> // rename a branch
+git branch -D <branch_name> // delete mentioned branch
+git branch -a // show all hidden branches of the cloned repository
+git checkout -b <new_name> <github_branch_name> // will copy <github_branch_name> in to you local repository in <new_name> branch
+git checkout -b <branch_name> // create new branch and switch to it
+-git clone --mirror <repo_url> .git
+-git config --bool core.bare false
+-git reset --hard // will bring everything from github repo
+git clone -b <branch_name> <url> // download only one branch
+git checkout -- <file name> // revert staged file to the original file from last commit
+git help <command> // to get help about command
+git log --oneline --graph --decorate --all // show all commits from all branches
+git log --oneline --graph --decorate --all --<file_name> // show all commits from all branches on that mentioned file
+git config --global alias.<you_elias> "<command without git prefix>" // make alias for a git command
+git config --global --list // show the global configuration
+git mv <file_name> // will rename from os and in git to staging need commit
+git rm <file_name> // will remove from os and in git to staging need commit
+git add -u // add renamed / deleted files to staging
+git add -A // add all sort of file modifications to staging
+
+//you can make any software accessible via terminal by adding it's path in environment variables in control panel
+// to add aliases of terminal commands use "~/.bash_profile"
+alias <alias>='command that you want alias to correspond to'
+

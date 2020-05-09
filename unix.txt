@@ -1,0 +1,25 @@
+find / -type d | grep "directory name" // find directory
+sudo systemctl restart nginx //restart nginx
+service nginx restart //restart nginx
+
+
+rm -dfr <repo_name> // will remove a directory
+
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear
+
+sudo systemctl start php-fpm
+sudo systemctl stop php-fpm
+sudo systemctl reload php-fpm
+sudo systemctl restart php-fpm
+
+sudo service php-fpm start # <- start it
+sudo service php-fpm stop # <- stop it
+sudo service php-fpm restart # <- restart it
+sudo service php-fpm reload # <- reload it
+
+php artisan cache:clear
+chmod -R 777 storage/
+composer dump-autoload

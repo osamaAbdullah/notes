@@ -1,0 +1,1 @@
+this.$router.go(this.$router.currentRoute); /reload single compenent in nova
