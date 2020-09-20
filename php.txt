@@ -1,0 +1,16 @@
+$items = array_map(function ($item){return $item;}, $items); // returned value from closer will be replaced with that item in new array 
+
+$items = array_filter($items, function ($item){return $bool;}); // if return true it wil be contained if return false it will be ignored / deleted
+
+$items = array_column($items, 'col-name'); // get one item of an array or public property of an object; you may pass the third argument to specify the key of returning array values
+
+POD :.
+$query->bindParam() // to bind parameter recommended to use htmlspecialchars() 
+
+str_replace('search-for','replace-with','in-this-string');
+
+$start = microtime(true); // calculate execution time
+$time_elapsed_secs = microtime(true) - $start;
+
+function foo (?Model $model) {} // it must be the same type or null
+//a class can export a property by calling getter on the object of it

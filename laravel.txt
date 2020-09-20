@@ -1,0 +1,145 @@
+eloquent:{{
+
+$query->get()->each(function($item){
+    // do something
+});
+
+$query->each()->delete();
+
+$query->get()->each()->delete();
+
+User::whereIn('col_name', $array);
+
+public function setBodyAttribute($body)
+{ // make mentioned user links to their profiles
+    $this->attributes['body'] = perg_replace('/@([^\s\.]+)/', '<a href="/profiles/$1">$0</a>', $str);
+      $this->attributes['body'] = perg_replace('/@([\w\-]+)/', '<a href="/profiles/$1">$0</a>', $str);
+}
+
+static::globalScope('replyCount', function($builder) {
+    $builder->withCount('replies');
+});
+
+$thread->fresh()->replies_count // if you made a model then you update it updates are not applied to that variable because a copy of that model is stored, but if you call fresh on it it will apply those updates
+
+$this->assertCount(1, $variable);
+$this->assertEqual(1, $variable);
+$this->assertException(\Exception::class);
+
+$table->unique(['user_id', 'thread_id']); // means combination of those two must be unique
+
+$query->where('id', 0)->exists(); // this will return a boolean
+
+$model->relation()->find(Primary_key)
+
+public function setUp() // in the test class will get call at the beginning of each method
+{
+    parent::setUp();
+
+    $this->signIn();
+}
+
+App\User::first()->notify(new NotificationClass); // send notification for a user
+
+Uuid::uuid4()->toString();
+
+tap(auth()->user(), function ($user) {
+    // use the $user value here
+});
+
+Notification::fake();
+Notification::assertSentTo(auth->user(), NotificationClass::class)
+
+$key = sprintf("users.%s.visits.%s", auth()->id(), $thread->id);
+cache()->forever($key, Carbon::now()); // record when last time a user visited a specific thread
+public function hasUpdatesFor()
+{
+    $key = sprintf("users.%s.visits.%s", auth()->id(), $thread->id);
+    return $this->updated_at > cache(key);
+}
+str_contains($str, 'sequence of character'); // case sensitive
+strpos($str, 'sequence of character') !== false; // not case sensitive
+preg_match('/(.)\\1{4,}/', $str); // look if a character repeated 5 times or more frequently
+
+foreach($arrayOfClasses as $class) { // run multi classes
+    app($class)->action($param);
+}
+
+Route::middleware('throttle:1')->post...; // you can only hit this endpoint 1 time per minute
+if(Gate::denies('policyAction', new Model)) {
+    // display message
+}
+
+in render method:
+if($exception instanceof YourCustomException){
+    return response('message', statusCode);
+}
+
+request()->wantsJson();
+
+protected function failedAuthorization() { // you can override on form request to customize Exception that will be thrown
+
+}
+
+preg_match_all('/\@([^\s\.]+)/', $str, $matches); // fined all mentioned users in a string 
+preg_match_all('/\@([\w\-]+)/', $str, $matches); // fined all mentioned users in a string 
+
+Storage::fake('disk_name'); 
+UploadedFile::fake()->image('avatar.jpg'); // this will generate an image
+Storage::disk('disk_name')->assertExists('avatar.jpg');
+
+request()->file('avatar)->store('folder_name', 'disk_name'); // store uploaded image and return it's new path
+request()->file('avatar)->storeAs('folder_name', 'file_name', 'disk_name'); // store uploaded image and return it's new path by specified name
+
+getColNameAttribute(){} // will override the column that is fetched from database
+
+array_map('json_decode', $array); // convert each item of the passed array from json to php array
+
+app()->environment('testing')? // to check the environment if it's production or testing
+
+assertSame($1, $2); // must be exactly same
+assertRedirect('/path')->assertSessionHas('flash', 'message'); // assert that session has a specific flash message
+assertRedirect('/path')->assertSessionHas('flash'); // assert that session has a message
+Mail::fake();
+// send an email
+Mail::assertSent(Email::class);  // test an email is send
+
+Mail::to($user)->send(new Email($data));
+
+route('osama', ['foo' => 'bar']);
+// path?foo=bar
+
+str_limit($str, $limit); // if string length > limit it will truncate and add '...' but you can override it as a third argument
+str_slug($str);
+is_numeric($char);
+
+md5($str); // encrypt given string 
+
+
+assertFalse($1);
+assertNotNull($1);
+
+str_random($length);
+Model::forceCreate();
+
+
+
+}}
+routing:{{
+Route::match([], '', '')
+
+$this->middleware('auth', ['except' => 'index']);
+}}
+
+async reloadResources(){ // update index table laravel-nova
+if(this.resourceName){
+    let filters_backup = _.cloneDeep(this.$store.getters[`${this.resourceName}/filters`]);
+    let filters_to_change = _.cloneDeep(filters_backup);
+    filters_to_change.push({});
+    await this.$store.commit(`${this.resourceName}/storeFilters`,filters_to_change);
+    await this.$store.commit(`${this.resourceName}/storeFilters`,filters_backup);
+}
+
+use refreshDatabase; // trait for unit testing
+
+$models->map(function ($x) {return $x->id})->join('-');

@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "classmap": [
+      "./"
+    ]
+  }
+
+} // load all classes in this directory or subdirectories of this directory excluding files that don't have class 

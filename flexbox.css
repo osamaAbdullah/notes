@@ -1,0 +1,38 @@
+/* flex box by default displays elements inline */
+* {
+    flex-direction: row; /* default */
+
+    list-style: none;
+
+    justify-content: center; /* center main axis by default x axis */
+
+    justify-content: space-around;
+
+    align-items: center; /* center opposite of main axis by default y axis */
+
+    margin-top: auto; /* align item to the bottom */
+    margin-bottom: auto; /* opposite of previous */
+
+    align-self: flex-end;
+
+    flex-wrap: wrap;
+
+    background-position: 0 100%; /* x andy y of the image */
+
+    /* md:class will apply to all screens that are medium or greater  */
+    /* flex-wrap can complete thr flow in next line below */
+
+}
+
+/* .class_name:not(:last-child) {
+
+} */
+
+
+ /* http://placehold.it/50x50 thumbnail
+
+/* normalize css: used to git rid of default styling
+
+/* https://tailwindcss.com/ for utility classes each single css property there is a class
+
+/* @apply .c1 .c2 .c3; // merge many css classes into one */

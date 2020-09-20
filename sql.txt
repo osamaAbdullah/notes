@@ -1,0 +1,44 @@
+show databases;
+
+mysql -u root -p kpi < kpi_db.sql // import database 
+
+// add new source
+
+$i++;
+    $cfg['Servers'][$i]['verbose']       = 'KPI Server';
+    $cfg['Servers'][$i]['host']          = '';
+    $cfg['Servers'][$i]['user'] = '';   
+    $cfg['Servers'][$i]['password'] = '';
+    $cfg['Servers'][$i]['connect_type']  = 'tcp';
+    $cfg['Servers'][$i]['compress']      = FALSE;
+    $cfg['Servers'][$i]['auth_type']     = 'config';
+    $cfg['Servers'][$i]['AllowNoPassword'] = false;
+
+mysql -u root -p -h ip_address // connect to remote mysql 
+
+
+create database <db_name>
+
+CREATE USER 'user'@'hostname';
+
+GRANT ALL PRIVILEGES ON dbTest.* To 'user'@'hostname' IDENTIFIED BY 'password';
+
+use mysql;
+
+SET PASSWORD FOR 'user-name-here'@'hostname' = PASSWORD('new-password'); // change user password
+
+mysqldump -u YourUser -p YourDatabaseName > wantedsqlfile.sql; // export database
+mysqldump -u YourUser -p YourDatabaseName TableName > wantedsqlfile.sql; // export a table in database
+
+mysql -u username -p database_name < file.sql // import database
+
+SELECT user FROM mysql.user; // show all users 
+
+DROP USER 'bloguser'@'localhost'; // delete user
+
+STR_TO_DATE('24-May-2005', '%d-%M-%Y') // mysql date formatter work in insert and select and all other commands
+
+
+load data local infile '/var/www/apps/nova.shiptokurdistan.net/orders.csv' into table `orders` FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'; // import data to a file from csv
+
+mysql -u root shipnova < shiptok_production.sql

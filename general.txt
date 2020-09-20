@@ -1,0 +1,7 @@
+// user bit.ly to make shorter emails
+
+accept="image/*" // this is an attribute for file input HTML5
+
+<th width="10%"></th>
+
+https://github.com/stevebauman/purify // html purifier

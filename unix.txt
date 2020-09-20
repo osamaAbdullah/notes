@@ -23,3 +23,15 @@ sudo service php-fpm reload # <- reload it
 php artisan cache:clear
 chmod -R 777 storage/
 composer dump-autoload
+
+cp -R <path> <path> // copy recursively
+
+
+chcon -R -t httpd_sys_content_t $SITE_PATH
+ // laravel error permission denied
+ // fixed my problem with this command in centos 7.6 Server
+chcon -R -t httpd_sys_rw_content_t $SITE_PATH
+
+setsebool httpd_can_network_connect_db 1 // permission denied for database in centOs
+
+chcon -Rv --type=httpd_sys_rw_content_t /dir // to make a file of directory readable by php

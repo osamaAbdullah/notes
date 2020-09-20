@@ -21,19 +21,18 @@ Git show // just like git log but it will also show the changes
 Git show <commit id> // show the changes in a commit
 Git ls-files // list the files that are tracked with git
 Git diff <commit id 1> <commit id 2>
+Git diff <branch_name_1> <branch_name_2>
 Git diff // show changes of changed file against the last commit
 Git difftool <commit id 1> <commit id 2>
 Git difftool head~1 head~2 // HEAD is equal to last commit id
 Git log --oneline
-Git revert (one of commit's that pup up from previous command)
-Git revert <commit id>   with auto commit
-Got revert <commit id> without auto commit // will revert to that commit without deleting commits after the commit that you reverted to
+Git revert <commit_id> // undo a commit by adding new commit that undo changes made in mentioned commit
 
 
 Git reset --hard <commit id> // will delete any commit after that commit which you reset to
 
 git touch .gitignore //add gitignore file
-git remote add origin "link" //connect local project with server project
+git remote add <origin> <link> // add a remote repo; connect local project with server project
 git remote //see the remote of your folder in server
 git push -u origin master //push your project from local to server
 git rm <nameOfTheFile> //will remove a file from git and from folder
@@ -42,23 +41,24 @@ git checkout <commit-id> -- <fileName> //will bring file from git reposetory to 
 git reset HEAD <fileName> //will take file from staging area to folder from green to red
 
 
-git checkout master
-git merge <branch that you want to merge with master>
-git branch -d <branch that you merged with master>
+git checkout master //goto master branch
+git merge <branch that you want to merge with master> // merge mentioned branch with master
+git branch -d <branch that you merged with master> // delete mentioned branch because it's the same as master
 
-git remote set-url origin https://github.com/USERNAME/REPOSITORY.git //changing remote origin
-git remote -v //show the remote
+git remote set-url origin <pathofgithubrepo> //changing /updating remote origin
+git remote -v //show all remotes
+git remote show <origin> // show details about mentioned remote
 
 git branch <new_name> // create new branch
 git branch <new_name> <id> // if you checkout a commit from history and make changes then you can move them to new branch before going back to the latest commit
 git branch // list branches
 git checkout <branch_name> // switch between branches
-git merge <branch_name> // merge mentioned branch into current branch that you are in
 git branch -m <pld_name> <new_name> // rename a branch
 git branch -D <branch_name> // delete mentioned branch
 git branch -a // show all hidden branches of the cloned repository
 git checkout -b <new_name> <github_branch_name> // will copy <github_branch_name> in to you local repository in <new_name> branch
-git checkout -b <branch_name> // create new branch and switch to it
+git checkout -b <branch_name> // create new branch and switch to 
+git checkout -b <branch_name> <remote_reference/branch_name> // create new branch with starting point of mentioned branch in mentioned remote_reference
 -git clone --mirror <repo_url> .git
 -git config --bool core.bare false
 -git reset --hard // will bring everything from github repo
@@ -77,4 +77,67 @@ git add -A // add all sort of file modifications to staging
 //you can make any software accessible via terminal by adding it's path in environment variables in control panel
 // to add aliases of terminal commands use "~/.bash_profile"
 alias <alias>='command that you want alias to correspond to'
+
+git checkout 345h546g // will go to that commit do some changes
+git branch <branch_name> 43434 //the hash-that-git-will-give-you to move changes to new branch
+git checkout master// will ignore everything and go back to last commit and remain changes in that mentioned branch
+
+merging:-
+1. fast-forward // no changes in current branch after the creation of the brunch that we wanna merge // this will happen simple without any trouble
+2. auto-merge fails because of conflicts, it happens when you want to merge mentioned branch with current branch but after the creation of mentioned branch you edited same lines that are edited in the mentioned branch
+git merge <branch_name> // merge mentioned branch into current branch that you are in
+
+tags in git // used as checkpoints of major milestone changes
+git tag <name> <commit_id / branch_name> // to create light-weight / simple tag ; if name of branch is given it means last commit of that branch
+git tag --list // list all tags
+git tag -d <name>  // delete mentioned tag
+git tag -a <name> -m "<message>" <commit_id / branch_name>// create annotated tag
+git push origin :<tag_name> // to delete tag in remote repo
+git fetch -p // fetch all tags; prune / delete branches from local that are removed from remote repo
+git tag -f <tag> <commit_id> // to update tag to point to the mentioned commit, if no commit mentioned will take HEAD as default
+git push --force origin <tag_name> // to apply above update in remote repo
+git show <tag_name> // inspect a tag
+git fetch --all // to fetch from all remote references at one time
+
+// <branch_name>@{3days} // in github comparison means compar mentioned branch before 3 days with ...
+// <branch_name>@{2020-08-01} // in github comparison means compar mentioned branch in mentioned date with ...
+// HEAD@{3} // in github comparison means compar the thirds commit before HEAD with ... 
+// HEAD^ // means HEAD - 1
+
+git stash // if you change some file then you remember hey i must not change that file now i must do something else now then i will do this change, in this case you will use stash command to save changes that you wanna ignore right now then go do you changes that you wanna do right now and commit then pop that stash out and work on that change
+git stash // save the changes files in a stash and revert that file back to what is was in last commit
+git stash list // list all stash
+git stash pop // pop out that stash and apply it on those files
+
+
+git reset
+git reflong show commits and actions on those commits
+git reset <commit_id> --soft // change that HEAD to point to the mentioned commit, and keep changes and put them in staging green
+git reset <commit_id> --mixed | default // change that HEAD to point to the mentioned commit, and keep changes and put them in current working directory red
+git reset <commit_id> --hard //  change that HEAD to point to the mentioned commit, and remove changes
+
+git push -u origin master --tags // push master branch with tags to origin // -u means in future you may only type `git push`; set up tracking relationship with remote repo 
+
+conflicting
+git pull --rebase // pull remote repo and put your changes over them
+git rebase --continue
+git push
+
+solving merge conflicts
+git pull // will say "merge conflicts in <file> \n automatic merge failed fix the conflicts then commit"
+git mergetool // specify where u put your changes or others or put some thing new
+git commit -m "<message>" // to get out of merge and then push to remote
+
+git config --global push.default simple // this will set a default option for pushing
+git pull // is git fetch and merge automatically 
+
+pull request is used when you want to merge a branch with master
+git fetch // fetch updates from remote repo
+git fetch -p // will look for any deleted branch and delete to be synchronized
+git pull --all // will update all tracking branches
+git push <origin> :<branch_name> // will delete mentioned branch
+
+// in commit message "close #<issue_number>" will automatically close the issue 
+
+git config --global --list
 
