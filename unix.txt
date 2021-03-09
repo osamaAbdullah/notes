@@ -35,3 +35,7 @@ chcon -R -t httpd_sys_rw_content_t $SITE_PATH
 setsebool httpd_can_network_connect_db 1 // permission denied for database in centOs
 
 chcon -Rv --type=httpd_sys_rw_content_t /dir // to make a file of directory readable by php
+
+sudo dpkg-reconfigure tzdata // to change time zone in ubuntu
+apt-cache search <name>
+apt-cache show <name>

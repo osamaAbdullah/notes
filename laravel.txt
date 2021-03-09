@@ -20,6 +20,7 @@ static::globalScope('replyCount', function($builder) {
     $builder->withCount('replies');
 });
 
+$thread->refresh()->replies_count
 $thread->fresh()->replies_count // if you made a model then you update it updates are not applied to that variable because a copy of that model is stored, but if you call fresh on it it will apply those updates
 
 $this->assertCount(1, $variable);
@@ -43,9 +44,11 @@ App\User::first()->notify(new NotificationClass); // send notification for a use
 
 Uuid::uuid4()->toString();
 
-tap(auth()->user(), function ($user) {
+tap(auth()->user(), function ($user) { // it passes that variable into the function
     // use the $user value here
 });
+
+$var = tap(Model::first())->someAction(); // will return first item in that model
 
 Notification::fake();
 Notification::assertSentTo(auth->user(), NotificationClass::class)
@@ -143,3 +146,78 @@ if(this.resourceName){
 use refreshDatabase; // trait for unit testing
 
 $models->map(function ($x) {return $x->id})->join('-');
+
+$model->isDirty()  // the model has been edited
+
+$model->isDirty('col')  // the col in model has been edited
+
+$model->created_at->gt(<date>) // check if the column is greater than
+
+is_null(<var>); // check if the passed variable is null
+
+bugsnag-laravel // bugreport automatically 
+
+// u can use the fork (branch) of a plugin instead of using offitial one described in this link 5:50 min
+https://laracasts.com/series/whats-new-in-laravel-8/episodes/11?autoplay=true
+
+//whats new in laravel 7
+1 - conponent structure improved 
+2 - str::of('<string>')->after('<chars>') // string helper class
+3 - custom cast class in models // create custom casts override get and set method
+4 - for route model binding u can use '/users/{user}/posts/{post:<col>}'
+5 - new http clinet facedes that uses guzzle under the hoods Http::post('<URL>', <data>)->body();
+
+//whats new in laravel 8
+1 - laravel installer updated to v4
+2 - new model directory
+3 - php artisan schema:dump // combine all migrations files to single .sql file
+4 - class-based model factory  Model::factory()->count(5)->make() | User::factory()->count(5)->admin()->make() // admin is a method on the factory class that will override the default definition
+5 - User::factory()->has(Post::factory->count(5))->create() | User::factory()->hasPosts(5)->count(3)->create() // create a user that have 5 posts
+5 - Post::factory()->for(User::factory())->count(3)->create() | Post::factory()->forUser()->count(3)->create() // create a user that have 5 posts
+6 - php artisan down --secret"<key>" | --render"<view>" // only how has key can access | render that view thew in mantainance mode
+7 - queue event listeners
+8 - in the tests $this->travel(7)->days() | $this->travel(-7)->days() // set the testing time as defined
+8 - $this->travelBack() // will reset everything
+9 - ratelimiter(olny accept 6 request per minute) moved from kernal api middlewares to routeServiceProvider@configureRateLimiting
+9 - to put it on any request do (->middleware('throttle:<name_that_specified_in:routeServiceProvider@configureRateLimiting>'))
+
+php artisan clear-compiled 
+php artisan optimize:clear
+composer dump-autoload
+php artisan optimize
+
+https://browsersync.io/
+
+global scope: make every call to a model scoped 
+// you can listen to login event with a listener by adding custom listener and adding it in EventServiceProvider.php \Illuminate\Auth\Events\Login::class => [ CustomListener::class ]
+// stubs used for overriding default templates 
+
+you can use obsorver instead of model events (protected static function boot())
+App\model::obsorve(new obsorveClass()) // in EventServiceProvider.php
+
+public function before(User $user) 
+{ // this function in policy will be called befor any thing id it returns true no other method will be hited
+  // but if it returns false then other methods will be hited
+    return true
+}
+
+$gate->before(function($user) { // apply golobal autherization for super administrator
+    if($user->isAdmin()) return true;
+}) 
+
+./vendor/bin/phpunit // to test
+
+in AppServiceProvider@boot
+view()->share(<var_name>, <value>); // this variable will be accessebile in all views
+
+Event::listen(<name>, function(){});
+Event::fire(<name>);
+
+srt::studly(<str>); // remove spaces 
+
+$this->output->progressStart(); // add progressbar for command
+$this->output->progressAdvance(); // add progressbar for command
+$this->output->progressFinish(); // add progressbar for command
+
+
+

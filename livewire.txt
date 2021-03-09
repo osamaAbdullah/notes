@@ -1,0 +1,60 @@
+//blade side
+wire:model=""
+wire:model.debaunce.1000ms="" // send request after 1000ms
+wire:model.lazy="" // send request after blur
+wire:click="<function(args...)>" // you can pass as many as u want
+wire:click="<function($event.target.innerText)>" // will send inner text on current element
+wire:mouseenter
+wire:submit.prevent="$set(<key>, <value>)"
+
+@foreach($items as $item) 
+	@livewire(<component>, ['item' => $item], key(<unique_var>))
+@endforeach
+
+$refrashe // will refrashe the component wire:click="$refrashe"
+
+wire:click="$emmit(<event>)" // will fire of that event and it may not reload current component if it's not listening to that event 
+
+window.livewire.emmit(<event>); // will trigger the event anywhere in js
+
+$error('email') <span>{{ $message }}</span> @enderror
+
+
+// php side
+life cycle events
+mount() // it can accept args u will pass them when u reference that component, you can acsses the Request too
+hydrate() // runs when any other requests happens
+updating() // before pulic properties changed
+updated() // when pulic properties changed
+updatedFoo() // only when foo properties changed
+
+$this->emmit(<event>); $protected $listeners = [<event> => <function>] // will trigger the event all how are listening will do their task
+
+$this->validate([
+	'email' => 'required'
+]); // if it fails it will send back error messages like laravel does
+
+auth()->login($user);
+
+
+
+
+// command side:- you can (add, move, copy, delete ...etc) a component using commands 
+
+
+
+
+
+// tests
+
+use RefrasheDatabase;
+
+Livewire::test('auth.register')->set('email', 'osama3akre@gmail.com')->set('password', 'secret')->set('passwordconfirmation', 'secret')->call('register')->assertRedirect('/');
+
+->assertHasErrors(['email' => 'required']);
+->assertHasErrors(['email' => 'unique']);
+->assertHasErrors(['password' => 'same']);
+->assertHasNoErrors()->set(<key>, <val>)->assertHasErrors(<field>); // realtime validation
+ 
+
+

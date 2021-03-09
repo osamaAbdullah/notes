@@ -1,0 +1,15 @@
+Widgets: {
+    SafeArea() : {}  
+    CircleAvatar() : {}  
+    FlatButton() : {}  
+    Expanded() : {}  
+    Center() : {}  
+    InkWell() : { you can register on tab listener on it }  
+    BottomNavigationBar() : { BottomNavigationBar }  
+    FutureBuilder() : { future: callback(), builder: (context, snapshot) {}}  
+    SingleChildListView() : {}
+}
+
+packages: {
+    flutter_slidable: ^0.5.3
+}

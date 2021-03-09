@@ -1,0 +1,35 @@
+x+ =====> match one or more x
+xa? ====>  a is optional
+xa* ====> optional a and more equivalent to (xa+?) 
+.x  ====> match anything except new line
+\w  ====> match any letter
+\W  ====> match anything except letter
+\s  ====> match any white space
+\S  ====> match anything except white space
+\w{5}  ====> match any combination of letters that their count is 5 
+\w{5,}  ====> match any combination of letters that their count is 5 or more
+\w{3,5}  ====> match any combination of letters that their count is between 3 to 5
+[fc]at  =====> match any f or c that are coming before at
+[a-z] =======> match all small letters 
+[0-9] =======> match all digits fro 0 to 9
+[a-zA-Z] =======> match all letters 
+(t|T)he =======> match any capital T or small t that followed by he
+^I =======> match any capital I that comes in the beginning of text
+I$ =======> match any capital I that comes in the end of text
+
+
+// look before 
+(?<=[tT]he). ====> match anything that come after (the or The) 
+(?<![tT]he). ====> match anything that doesn't come after (the or The) 
+
+// look after(ahead)
+(?=[tT]he). ====> match anything that come after (the or The) 
+(?![tT]he). ====> match anything that doesn't come after (the or The) 
+
+() =====> grouping
+[] =====> ranges
+{} =====> counts
+
+you can replace a group by ($1) $ sign followed by index order for that group
+(?<group_name>\d{3}) // name a group accessed by $group_name 
+:() // none capturing group

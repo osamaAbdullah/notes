@@ -20,6 +20,8 @@ mysql -u root -p -h ip_address // connect to remote mysql
 create database <db_name>
 
 CREATE USER 'user'@'hostname';
+CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
+ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
 
 GRANT ALL PRIVILEGES ON dbTest.* To 'user'@'hostname' IDENTIFIED BY 'password';
 
@@ -42,3 +44,27 @@ STR_TO_DATE('24-May-2005', '%d-%M-%Y') // mysql date formatter work in insert an
 load data local infile '/var/www/apps/nova.shiptokurdistan.net/orders.csv' into table `orders` FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'; // import data to a file from csv
 
 mysql -u root shipnova < shiptok_production.sql
+
+select IFNULL(<COL>, 0) // if COL is null it will put 0 (mysql)
+SELECT now() - INTERVAL 1 YEAR (mysql)
+select extract(year from now());
+
+indexing: 
+// User EXPLAIN keyword to see if index is used or not 
+// you can use "FORCE INDEX (<index_constraint>)" // SELECT * FROM `admins` FORCE INDEX (phone) WHERE `phone` = 12345678
+1- if you put a column in a function index will not work <FUNC>(<col>) / WHERE YEAR(`created_at`)
+2- index are not working 100% when you use inequality <, >, >=, <=
+
+
+with <onFly_table1> as (<query>), <onFly_table2> as (<query>), ...
+select <onFly_table1>.<col>, from <onFly_table1> join <onFly_table2> on ... where ...
+
+select * from (<query>) as <onFly_table1> join (<query>) as <onFly_table2> on ... where ...
+
+****you can substitute sub_query anywhere you reference a table or a column****
+******BUT JOINING SEEMS TO BE FASTER******
+
+having is like where exccept that having will calculate after grouping the agregate functions
+
+				
+

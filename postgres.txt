@@ -1,0 +1,57 @@
+http://lampblogs.com/blog/install-postgresql-in-xampp-on-windows-and-integrate-phppgadmin
+
+psql --help
+
+\l => list all databases
+
+psql -h <HOST> -p <PORT> -U <USER> <DATABASE> // connect to database
+
+\c <DATABASE> // change the database
+\x // toggle expanded display (on | off)
+
+\d // list all tables
+\d <TABLE> // show menstioned table structure
+\df // list avaliable functions;
+
+INSERT INTO <TABLE> (created_at) VALUES (DATE 'YYYY-MM-DD'); // when inserting to date datatype
+
+https://www.mockaroo.com // data generator
+
+\i <FILE> // execute from a file
+
+SELECT * FROM <TABLE> OFFSET 10 LIMIT 5; // select 5 items after 10th row it will select [11, 12, 13, 14, 15]
+SELECT * FROM <TABLE> OFFSET 1 FETCH FIRST 2 ROWS ONLY; // select 2 items after 1st row it will select [2, 3]
+
+LIKE '___e' // at least 3 character then (e) came
+ILIKE // ignores case (not case sensetive)
+
+select coalesce(<COL>, 0) // if COL is null it will put 0
+
+select now()::date // cast full timestamp to date
+select now()::time // cast full timestamp to time
+
+SELECT now() - INTERVAL '1 YEAR'; 
+
+select extract(year from now());
+select extract(year from age(now() - interval '5 year'));
+
+create table <table> ( id bigserial not null primary key, post_id bigint references <table> (<col>), unique(post_id) );
+
+alter table <table> add constraint <constraint> check(<col> = '<value>' or <col> = '<value>');
+alter table <table> add constraint <constraint> unique(<col>);
+insert into <table> (<col>, <col2>) values ('<value>', '<value2>');
+insert into <table> (<col>, <col2>) values ('<value>', '<value2>') on conflict(<col>) do nothing;
+insert into <table> (<col>, <col2>) values ('<value>', '<value2>') on conflict(<col>) do update set <col> = excluded.<col>;
+delete from <table> where <condition>;
+update <table> set <col> = '<value>', <col2> = '<value2>' where <condition>;
+
+select * from <table_1> join <table_2> on <table_1>.<col> = <table_2>.<col>;
+select * from <table_1> left join <table_2> on <table_1>.<col> = <table_2>.<col>; // show all rows from <table_1> the one that have and the ones that don't have relation with <table_2>
+
+alter sequence users_id_seq restart with <number>; // make auto increment start from <number>
+select * from pg_available_extensions; // list all extensions
+create extension if not exists "<extension>"; // install an extension
+
+\copy (select * from <table>) to '<file>' delimiter ',' csv header; // export result of query
+
+

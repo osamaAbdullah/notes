@@ -1,8 +1,0 @@
-@screen md // helper
-
-font-size: rem // rem stands for (root font size) html tag
-to change from px to rem the formula is current-px/root-px = new rem
-when using rem every thing depending on font size of html tag
-
-position: sticky; 
-top: 0; // when this element reaches top: 0 pin (stick) it until the end of its container

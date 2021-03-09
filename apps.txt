@@ -1,0 +1,9 @@
+windows: {
+	SQL Database Management: ['tablePlus', 'DBeaver', 'phpmyadmin', 'dataGrip']
+}
+
+websites: {
+	onlineJobs: ['weworkremotely.com', 'remoteok.io', 'angel.co'],
+	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com']
+	real-timeCommunicationForWeb: ['webrtc.org']
+}

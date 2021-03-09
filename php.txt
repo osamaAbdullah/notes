@@ -14,3 +14,66 @@ $time_elapsed_secs = microtime(true) - $start;
 
 function foo (?Model $model) {} // it must be the same type or null
 //a class can export a property by calling getter on the object of it
+
+$request->expectsJson() // retun true if send request is json
+
+max_execution_time = 30     ; Maximum execution time of each script, in seconds
+max_input_time = 60 ; Maximum amount of time each script may spend parsing request data
+memory_limit = 8M      ; Maximum amount of memory a script may consume (8MB)
+
+use App\models\{User,Post} // import both class
+
+$stmt = $pdo->prepare("SELECT name FROM table WHERE id=?");
+$stmt->execute([$id]);
+$name = $stmt->fetchColumn();
+
+while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    //
+}
+
+PDO::FETCH_KEY_PAIR
+https://phpdelusions.net/pdo#fetch
+
+in nested try/catch blocks you have to throw an exeption in the inner try/catch to be handled in the outter try/catch block
+
+eval(str); // executing a asting of code "eval("echo 'hey there'");" 
+
+public static function create(...$params) { // accept variable number of arguments 
+	return new static(...$params); // passdown all arguments in to constructor
+}
+
+$result_str = perg_replace('/[A-Z]/', ' $0', $source_str) // replace all capital leters with space+capital letter (UserName => User Name)
+
+$name = (new ReflectionClass())->getShortName(); // get instantiated class (sub_class) name
+
+is_float($var);
+
+range(1, 10) // generates array [1,2,3,4,5,6,7,8,9,10]
+str_repeat('_', random(20, 30)) // repeat "_" 20 to 30 times
+money_format('$%i', $value); // $45.00
+
+method_exisits([$object, $funcname]); // check if a method exists on a class 
+call_user_func([$object, $funcname]); // calls a method in a class
+
+str_contains($str, $key);
+
+is_a(<object>, <str_class_name>); // is_a($obj, 'Square');
+pi() = 3.14...;
+perg_split(<delemiter>, <str>) : array // perg_split('/, ?/', 'i, love, you') 
+
+current(<array>); // give you current index
+next(<array>); // give you next index
+reset(<array>); // start from 0
+end(<array>); // last index
+
+class_exists(<class>);
+
+new class <class> implements <interface> {...}
+
+$callback && $callback(args); // if $callback is not null call it
+
+array_map('ucwords', <array>); // capitalize first letter in for all items in this array
+
+// remove duplication from multi dimentional array 
+$array_output = array_map("unserialize", array_unique(array_map("serialize", $array_input)));
+$array_output = array_unique($array_input, SORT_REGULAR);

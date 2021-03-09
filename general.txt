@@ -5,3 +5,75 @@ accept="image/*" // this is an attribute for file input HTML5
 <th width="10%"></th>
 
 https://github.com/stevebauman/purify // html purifier
+
+https://carbon.now.sh/ // make images out of code snipt
+
+// alias for powershell
+C:\Users\osama\Documents\WindowsPowerShell\profile.ps1 // path of the alias file
+notepad $((Split-Path $profile -Parent) + "\profile.ps1") // to create the file
+Set-Alias <alias> <command>
+...
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted // if script couldn't run then this command will help
+
+
+// vhost in xampp
+<VirtualHost *:80>
+    ServerName shipnova.demo
+    DocumentRoot "C:/Users/osama/apps/htdocs/projects/shipnova/public"
+    SetEnv APPLICATION_ENV "development"
+    <Directory "C:/Users/osama/apps/htdocs/projects/shipnova/public">
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+C:\Users\osama\apps\apache\conf\extra\httpd-vhosts.conf // add it here
+	
+	127.0.0.1       shipnova.demo
+C:\Windows\System32\drivers\etc\hosts // add it here
+
+
+
+the c programming language K&R
+
+
+RAID: use more than one hard to seed up read and write, and to backup data to be safe // also there are SW and HW paids
+AHCI: new version of sata it's fast
+
+// cmd windows
+1 - chkdsk // this command will check for error in hard drive
+2 - chkdsk /f // this command will check for error in hard drive then fixed it (it will need restart and after that will run )
+
+ipconfig /all // more info about network
+ipconfig /renew // get new ip from DHCP
+ipconfig /release // relese ur ip (disconnect to internet)
+ping <ip> // see if u are connected with that ip
+ping -t <ip> // keep pining untill namullay stop (in other oses it's the default ping)
+// ping will give you the ip of domain even if it doesn't work
+netstat // all connection that system currently have
+netstat -n // output number instread of names
+netstat -f // output domain names
+netstat -a // all connection that system has even if it's listening finished everything
+tcpview is graphical user interface for netstat https://docs.microsoft.com/en-us/sysinternals/downloads/tcpview
+nslookup // to show ur DNS server also the language to query DNS server 
+nslookup <ip> // to show domain of that ip (server)
+// with port forwarding u can configure a router to forward public trafic to cirtain ip(device)
+// tellnet in like SSH 
+traceroute -I <domain/ip> // show the path to destination host
+https://www.wireshark.org/ // protocol analyzer see all packets sent and recived
+
+//domain
+https://www.hover.com/
+https://www.namecheap.com/
+https://www.cloudflare.com/
+
+https://jakearchibald.github.io/svgomg/ // optimize svgs
+
+https://unpkg.com/<library_name>
+
+hit "t" in github reposetory to search for file
+
+in sorting 
+asc // from small to big
+desc // from big to small

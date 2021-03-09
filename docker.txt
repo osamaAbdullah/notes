@@ -1,0 +1,94 @@
+docker container run --publish 80(os):80(container) --network <network> --rm(remove the container when its done) nginx // download and run ngninx container (--publish): send the trafic to the container(if you want to access it from outside of docker)
+
+docker container run --publish 80:80 --detach nginx // run in the background 
+
+docker container run --publish 80:80 --detach --name <name> nginx // name the container
+
+docker container ls (docker ps)// list only running containers
+
+docker container ls -a (docker ps -a)// list all containers
+
+docker container stop <container_id> // stop a container
+
+docker container logs <container_name> // show logs of a container
+
+docker container rm -f <container_name> <container_name> ... // force remove mentioned containers 
+
+docker top <container_name> // list all process in that container
+docker inspect <container_name> // see congiguration of that container
+docker stats <container_name> // show live performance of containers
+
+docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_PASSWORD=12345 mysql // run mysql
+
+docker image ls // list local images
+
+docker container run -it --name webserver nginx bash  // run the container and go inside that container using bash
+
+docker container start -ai <container_name>  // run the container existing and go inside that container using bash
+
+docker container exec -it <container_name>mysql <program_name>bash // open menstioned-program(bash) in mentioned already running container
+
+docker container port <container_name>mysql // show the port for that container
+
+// Network 
+| host: the network that is attached to your host directly without virtual host it will improve performance but decrease container security 
+
+docker network ls // list all networks
+
+docker network inspect <network> // show details about mentioned network
+
+docker network connect <network> <container> // connect a container to a network
+docker network disconnect <network> <container> // disconnect a container to a network
+
+docker network create <network> -- driver (is optional [bridge|host]) // it will create new network on that driver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ docker container run -p 3306:3306 --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql // mysql run with this command in localhost and connected to my pc network
+
+
+
+
+

@@ -20,6 +20,7 @@ Git show head
 Git show // just like git log but it will also show the changes
 Git show <commit id> // show the changes in a commit
 Git ls-files // list the files that are tracked with git
+git rm --cached <file> // to stop tracking the file that was already tracked
 Git diff <commit id 1> <commit id 2>
 Git diff <branch_name_1> <branch_name_2>
 Git diff // show changes of changed file against the last commit
@@ -140,4 +141,7 @@ git push <origin> :<branch_name> // will delete mentioned branch
 // in commit message "close #<issue_number>" will automatically close the issue 
 
 git config --global --list
+
+1. git reset --hard 
+2. git clean -df // discard all that changes and remove failes that havent been staged
 

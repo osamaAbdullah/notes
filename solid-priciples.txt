@@ -1,0 +1,25 @@
+solid priciples
+1- single responsibilities Pattern: ceach class must do one thing
+2- open/close Pattern: open for extention but close to modification (when you add something u don't have to change other things which you already implemented) [when u add somthing u musn't touch internal logic but for example you will make a new class, method ...]
+3- singleton Pattern: you will only have one instance of a class throwout the who application (for example database driver)
+4- Facade Pattern: interface for underling wird functionality
+5- Bridge/Adapter Pattern: an adapter that can act with different things almost the same for example in laravel u can use mysql, pgsql ... almost the same
+6- Strategy Pattern: clean up the code
+7- Observer Pattern(publisher, subscriber): 
+
+
+8- subistitution priciple: subclass must return samething like superclass or interface
+9- Interface Segregation priciple: cilents should not be forced to implement interface that they don't use
+10- Dependency Inversion priciple: high level code must not depend on low level code(implementation) but it should depend on abstraction(interface)
+
+typely coupled // depending on concret class (direct class)
+losely coupled // depending on abstraction (an interface)
+
+design paterns in php
+1- The Decorator Pattern: all classes will implement an interface and none base classes will depend on an instance of that interface (use it when you want to extend functionality of one or two methods not all functionality)
+2- Adapter patern: translate one interface to another (create adapter class that implements the interface that you want to adapt to and inject the class and translate the methods) // use full when you have an interface then you use another from external package that you dont have control on then you map your api to their api
+3- Template patern: when you have duplicated code in two or more classes with a little of differences you move the common code to an abstract class then force the subclasses to implement that little thing which is different from one class to another
+4- Strategy patern: when you do somthing in 4 ways and you want to use them interchangeably you create interface and then you require to give an instance that implements that interface
+5- Chain of Responsibility patern: a class will be run and when it's done it will run the next class in the chain
+6- Specification Pattern: 
+7- Observe Pattern: one to many relationship when an object is changed many objects must respond on that 

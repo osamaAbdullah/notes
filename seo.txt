@@ -1,0 +1,18 @@
+1- domain name
+2- pages title
+3- header tags
+4- url structure
+5- meta description tag
+6- key word (count)
+7- alt in images
+8- links and their text (quality(from trusted website, .edu, .gov), quantity)
+9- social networks (better to have profile in all and connect them to ur website) 
+10- depend on autocomplete to chose most pupular key words
+11- dont put your links every where on all websites and forums it will take it as a spam
+12- dont use (fiverr) to buy backlinks 
+13- varvy.com (test your website if it follows ESO guidelines)
+14- robots.txt (what the search engine is not allowed to CURL) | dont put sensetive data there because hackers check that files
+15- sitemap.xml (www.sitemaps.org) (www.xml-sitemaps.com) // tell the search engine all ur pages and their proiorities
+16- (https://www.site-analyzer.com/) 
+17- a lot of usefull content is better a lot of text
+18- avoid secutity issues (https, X-Xss ...etc).
