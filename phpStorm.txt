@@ -6,10 +6,10 @@ Alt + , ----------->  last edit
 Alt + . ----------->  next edit
 Alt + A ----------->  file structure
 Alt + R ----------->  run current test
-Alt + L ----------->  collapse all
-ctrl + , ----------->  collapse Recursivly
-Alt + ; ----------->  Expand Recursivly
-Alt + ctrl + ; ----------->  Expand all
+Alt + ctrl + L ---->  collapse all
+ctrl + L ---------->  collapse Recursivly
+Alt + ctrl + O ----------->  Expand All
+Alt + O ----------->  Expand Recursivly
 
 
 Alt + F7 ---------->  search for usage in the hole project

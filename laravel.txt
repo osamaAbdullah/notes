@@ -219,5 +219,11 @@ $this->output->progressStart(); // add progressbar for command
 $this->output->progressAdvance(); // add progressbar for command
 $this->output->progressFinish(); // add progressbar for command
 
+composer require laaravel/brezz // new version of laravel ui
+
+Model::search($term)->get()
+
+Http::asForm()->post(<url>, <data>)
+
 
 

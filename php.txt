@@ -73,7 +73,28 @@ new class <class> implements <interface> {...}
 $callback && $callback(args); // if $callback is not null call it
 
 array_map('ucwords', <array>); // capitalize first letter in for all items in this array
+array_combine($arr1, $arr2); // will make $arr1 keys and $arr2 values 
+
 
 // remove duplication from multi dimentional array 
 $array_output = array_map("unserialize", array_unique(array_map("serialize", $array_input)));
 $array_output = array_unique($array_input, SORT_REGULAR);
+
+abort(422, <message>);
+
+declare(strict_types=1);
+
+
+php8
+
+1- $model?->users()?->id()
+2- match equvalent to switch
+3- __construct(protected string $var = false){}
+4- $obj::class = get_class($obj)
+5- foo($name){}  foo(name: 'osama')
+6- str_contains(), str_starts_with(), str_ends_with()
+7- new WeakMap() equvalent new splObjectStorage() // the differeces is with WeakMap you can unset($obj) and it will be removed but with splObjectStorage it will not be removed
+8- $var['foo'] ??= 3345; // if not set set it
+9- union type: foo(User|Admin|null $user){}
+
+

@@ -30,6 +30,9 @@ docker container exec -it <container_name>mysql <program_name>bash // open menst
 
 docker container port <container_name>mysql // show the port for that container
 
+docker container run: flages ->
+-v // mount it to a volume 
+
 // Network 
 | host: the network that is attached to your host directly without virtual host it will improve performance but decrease container security 
 
@@ -41,6 +44,8 @@ docker network connect <network> <container> // connect a container to a network
 docker network disconnect <network> <container> // disconnect a container to a network
 
 docker network create <network> -- driver (is optional [bridge|host]) // it will create new network on that driver
+
+
 
 
 

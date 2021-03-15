@@ -1,0 +1,2 @@
+$this.$el>closest(<element>).submit();
+$this.$el.dispatchEvent(new CustomEvent(<name>, {bubbles: true}));

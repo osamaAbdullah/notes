@@ -6,4 +6,9 @@ websites: {
 	onlineJobs: ['weworkremotely.com', 'remoteok.io', 'angel.co'],
 	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com']
 	real-timeCommunicationForWeb: ['webrtc.org']
+	icons: ['zondicons.com']
+}
+
+linux: {
+	terminals: ['ohmyz.sh']
 }
