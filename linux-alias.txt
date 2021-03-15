@@ -1,0 +1,85 @@
+#custom
+alias start-mysql="sudo docker container start mysql"
+alias stop-mysql="sudo docker container stop mysql"
+alias exec-mysql="sudo docker container exec -it mysql bash"
+
+
+alias code='codium'
+alias gs="git status"
+gacp() { git add . && git commit -m "$1" && git push; }
+alias gac="git add . && git commit -m "
+
+
+alias pa="php artisan "
+alias nr="npm run "
+
+alias pu="./vendor/bin/phpunit"
+alias pus="./vendor/bin/phpunit --filter "
+
+alias dtc="ssh osama.sm@95.170.206.130"
+
+
+
+#out-source
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias gh='history|grep' # Usage gh text
+alias left='ls -t -1' # Just directory list
+alias count='find . -type f | wc -l'    # count lines in file
+alias ve='python3 -m venv ./venv'
+alias va='source ./venv/bin/activate'
+alias cpv='rsync -ah --info=progress2'
+alias tcn='mv --force -t ~/.local/share/Trash '
+alias weather='curl -s "http://wttr.in"'
+alias du="du -ach | sort -h"
+alias df='df -h'                          # human-readable sizes
+alias ls='ls -F --color=auto'
+alias ll='ls -lah'
+alias lt='ls --human-readable --size -1 -S --classify'
+alias broken-symlink="find -xtype l -print" # broken symlinks
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+alias supdate='sudo pacman -Syyu'
+alias ysupdate='yay -Syyu'
+alias lip="ip -br -c a" # Print local ip
+alias eip="dig @1.1.1.1 whoami.cloudflare ch txt +short"    # Print public ip4 address
+alias cpu="lscpu"   # Cpu info
+qrcode() { qrencode -o "$1".png "$2"; } # Generate qr code
+alias nets='sudo netstat -nlptu'
+alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rns $(pacman -Qdtq) || echo "no orphans to remove"'
+alias lastexitcode="echo $?"    # Display last exit bash code
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias vi=vim
+logs() { journalctl -p 3 -xb "$1"; } # Usage: logs -0, logs -1, etc
+alias pacnew='find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null'
+alias manuallyinstalled="comm -12 <(grep -Poe '\[ALPM\] installed \K\S*' /var/log/pacman.log | sort | uniq) <(pacman -Qeq | sort)"
+alias youtube-dl='youtube-dl -c -o "%(title)s.%(ext)s"'
+alias ix=" | curl -F 'f:1=<-' ix.io"
+alias git-garbage-collection="git gc --prune=now --aggressive"
+
+# Translation in terminal
+en() { trans :en "$1"; }
+
+# systemlevel
+start() { sudo systemctl start "$1"; }
+stop() { sudo systemctl stop "$1"; }
+restart() { sudo systemctl restart "$1"; }
+status() { sudo systemctl status "$1"; }
+enabled() { sudo systemctl enable "$1"; listd; }
+disabled() { sudo systemctl disable "$1"; listd; }
+
+# userlevel
+ustart() { systemctl --user start "$1"; }
+ustop() { systemctl --user stop "$1"; }
+ustatus() { systemctl --user status "$1"; }
+uenabled() { systemctl --user enable "$1"; }
+udisabled() { systemctl --user disable "$1"; }
+
+# systemd aliases and functions
+alias t3='sudo systemctl isolate multi-user.target'
+alias t5='sudo systemctl isolate graphical.target'
+
+# for dot files in home directory
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
