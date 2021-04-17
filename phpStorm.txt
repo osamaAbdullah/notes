@@ -1,15 +1,22 @@
-Alt + P ----------->  manage dependencies  
-ctrl + Alt + R ---->  revert 
+ctrl + Alt + Z ---->  revert (rollback)
 Alt + E ----------->  select next occurance
 Alt + W ----------->  select all occurance
 Alt + , ----------->  last edit
 Alt + . ----------->  next edit
 Alt + A ----------->  file structure
 Alt + R ----------->  run current test
-Alt + ctrl + L ---->  collapse all
-ctrl + L ---------->  collapse Recursivly
-Alt + ctrl + O ----------->  Expand All
-Alt + O ----------->  Expand Recursivly
+
+Alt + D ---------->  collapse Recursivly
+Alt + L ----------->  Expand Recursivly
+
+Alt + H ----------->  Split Horizantal
+Alt + V ----------->  Split Vertical
+Alt + B ----------->  UnSplit
+Alt + N ----------->  UnSplit All
+
+Alt + F ----------->  GOTO File
+Alt + M ----------->  GOTO Method
+Alt + C ----------->  GOTO Class
 
 
 Alt + F7 ---------->  search for usage in the hole project
@@ -17,10 +24,3 @@ Alt + G ----------->  generate
 Alt + Z ----------->  refactor
 ctrl + I ---------->  implement method
 ctrl + O ---------->  override method
-
-ssh root@138.68.79.45
-cd /var/www/apps/nova.shiptokurdistan.net
-scp -r root@138.68.79.45:/var/www/apps/osama ~/xampp/htdocs/projects/osama
-scp -r 'C:\Users\osama\xampp\htdocs\projects\shipnova' root@138.68.79.45:/var/www/apps/
-
-/usr/bin/php /usr/share/nginx/cron/u2020/php/CalculateFormula.php

@@ -219,11 +219,16 @@ $this->output->progressStart(); // add progressbar for command
 $this->output->progressAdvance(); // add progressbar for command
 $this->output->progressFinish(); // add progressbar for command
 
-composer require laaravel/brezz // new version of laravel ui
+composer require laravel/breeze --dev // new version of laravel ui
 
 Model::search($term)->get()
 
 Http::asForm()->post(<url>, <data>)
 
+function($attribute, $val, $fail) { // custom validation rule with closure
+    if($val){
+        $fail($attribute . ' is required.');
+    }
+}
 
 

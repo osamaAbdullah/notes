@@ -160,3 +160,5 @@ isDescendant(parent, child) {
 // eslint.com quality checker
 
 eval(str); // executing a asting of code "eval("console.log("hey there")");" 
+
+"//" floor division

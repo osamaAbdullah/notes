@@ -1,0 +1,19 @@
+x = "some text" if x == nil
+x = "some text" unless x != nil
+
+! // convert to boolean then negate
+!! // convert to boolean then negate two times
+
+everything in ruby evaluates to true except [nil, false]
+
+ for i in 0..4
+   puts i
+ end
+
+ arr[-1] || ar.last // last index
+ arr[-2] // the index befor last index
+ arr[150] // when there is no 150 index it will give nil not raise exception like other lang
+
+ arr.push(1) || arr.append(1) || arr << 1 // add item to array 
+
+ rubular.com // regularexpression in ruby
