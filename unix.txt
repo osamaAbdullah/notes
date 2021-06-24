@@ -39,3 +39,7 @@ chcon -Rv --type=httpd_sys_rw_content_t /dir // to make a file of directory read
 sudo dpkg-reconfigure tzdata // to change time zone in ubuntu
 apt-cache search <name>
 apt-cache show <name>
+
+mkdir -p <dir_name/dir_name> // this will create all directories recurcivly
+
+mv docs/** ./ # move Everything from docts directory to current directory

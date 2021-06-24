@@ -1,4 +1,13 @@
 cmd + shift + [.]   =========>  toggle show hidden Files 
+cmd + shift + 4     =========>  croped Screenshot 
+cmd + shift + 3     =========>  full Screenshot 
+cmd + option + esc  =========>  force quit
+cmd + option + delete  =========>  Permanently Deleting file
+cmd + shift + t     =========>  reopen last closed tab (safari)
+cmd + q             =========>  quit Permanently 
+cmd + ^ + R         =========>  mobile view safari
+
+
 
 
 

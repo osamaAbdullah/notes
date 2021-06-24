@@ -66,5 +66,21 @@ select * from (<query>) as <onFly_table1> join (<query>) as <onFly_table2> on ..
 
 having is like where exccept that having will calculate after grouping the agregate functions
 
-				
 
+// showing duplicated rows of my_table
+select *
+  from my_table a
+  join ( select firstname, lastname 
+           from my_table 
+          group by firstname, lastname 
+         having count(*) > 1 ) b
+    on a.firstname = b.firstname
+   and a.lastname = b.lastname
+
+// deleting only duplicated rows form contacts
+
+DELETE t1 FROM contacts t1
+INNER JOIN contacts t2 
+WHERE 
+    t1.id < t2.id AND 
+    t1.email = t2.email;

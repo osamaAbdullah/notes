@@ -1,8 +1,8 @@
 ctrl + Alt + Z ---->  revert (rollback)
 Alt + E ----------->  select next occurance
 Alt + W ----------->  select all occurance
-Alt + , ----------->  last edit
-Alt + . ----------->  next edit
+Alt + . ----------->  last edit
+Alt + , ----------->  next edit
 Alt + A ----------->  file structure
 Alt + R ----------->  run current test
 

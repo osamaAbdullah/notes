@@ -4,9 +4,34 @@ windows: {
 
 websites: {
 	onlineJobs: ['weworkremotely.com', 'remoteok.io', 'angel.co'],
-	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com']
+	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com', 'https://www.datacamp.com']
 	real-timeCommunicationForWeb: ['webrtc.org']
 	icons: ['zondicons.com']
+	Flowchart-Sketch : ['https://www.canva.com/', 'https://miro.com/', 'https://app.diagrams.net']
+	drawing-on-map : ['https://www.qgistutorials.com/', '']
+	maps : ['https://satellites.pro/', 'https://www.mapbox.com', 'https://www.arcgis.com']
+	mac-apps: [
+		adblocker-for-safary : https://apps.apple.com/us/app/adblock-pro-for-safari/id1018301773
+		photoshop-Alternative : https://affinity.serif.com/en-gb/photo/
+		download-cracked-mac-apps : https://www.torrentmac.net
+		download-cracked-mac-apps : https://mac-torrents.io
+		cleaner-and-uninstaller : https://macpaw.com/cleanmymac
+		apple-video-editor : https://www.apple.com/final-cut-pro/
+		torrent-downloader : https://www.qbittorrent.org
+		vlc-video-player : https://www.videolan.org/vlc/
+		VPN : https://www.betternet.co
+		read-hard-disk-from-windows : https://mounty.app
+		photo-Viewers : https://www.fatcatsoftware.com/powerphotos/
+		video-downloader : https://software.charliemonroe.net/downie/
+		unlock-iphone-pascode-after-format : https://www.tenorshare.com/products/4ukey-unlocker.html
+		zip-manager-for-mac : https://macitbetter.com
+		screen-recorder-for-mac : https://www.videosolo.com/screen-recorder/
+		video-converter : https://videoconverter.wondershare.com
+		video-extention-changer : https://handbrake.fr
+	]
+	databases-managment-systems: ['https://clickhouse.tech']
+	charts: ['https://recharts.org', 'https://www.chartjs.org']
+
 }
 
 linux: {

@@ -231,4 +231,17 @@ function($attribute, $val, $fail) { // custom validation rule with closure
     }
 }
 
+// in serviceProvider register method, when it instantiates this class it will put what ever is returned from thos function
+$this->app->bind(Class::class, function() {
+    return new Class(params...);
+})
+$this->app->singleton(Class::class, function() {
+    return new Class(params...);
+})
 
+dispatch(new Class()); // will run the closure in the background
+dispatch(function() {}); // will run the closure in the background
+dispatch(function() {})->delay(now()->addMinutes(2)); // will run the closure in the background
+
+
+new Crawler($content) //lop throw the HTML

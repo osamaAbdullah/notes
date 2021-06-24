@@ -98,3 +98,12 @@ php8
 9- union type: foo(User|Admin|null $user){}
 
 
+new ReflectionClass(<class_name>);
+new ReflectionMethod(<class_name>, <method_name>);
+new ReflectionProperty(<class_name>, <property_name>);
+new ReflectionParameter([<class_name>, <property_name>], <parameter_number>);
+new ReflectionObject(<$obj>);
+
+passing by refrance:
+
+function foo() use(&$var){}
