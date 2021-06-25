@@ -3,7 +3,7 @@ sudo systemctl restart nginx //restart nginx
 service nginx restart //restart nginx
 
 
-rm -dfr <repo_name> // will remove a directory
+rm -dfr <repo_name> # will force remove a directory recurcivly
 
 php artisan cache:clear
 php artisan route:clear
@@ -20,11 +20,8 @@ sudo service php-fpm stop # <- stop it
 sudo service php-fpm restart # <- restart it
 sudo service php-fpm reload # <- reload it
 
-php artisan cache:clear
-chmod -R 777 storage/
-composer dump-autoload
 
-cp -R <path> <path> // copy recursively
+cp -R <path> <path> # copy recursively
 
 
 chcon -R -t httpd_sys_content_t $SITE_PATH
@@ -36,10 +33,107 @@ setsebool httpd_can_network_connect_db 1 // permission denied for database in ce
 
 chcon -Rv --type=httpd_sys_rw_content_t /dir // to make a file of directory readable by php
 
-sudo dpkg-reconfigure tzdata // to change time zone in ubuntu
+sudo dpkg-reconfigure tzdata # to change time zone in ubuntu
 apt-cache search <name>
 apt-cache show <name>
 
 mkdir -p <dir_name/dir_name> // this will create all directories recurcivly
 
 mv docs/** ./ # move Everything from docts directory to current directory
+
+which <Executable> # show path of Executable
+type <Executable>
+
+which ls
+type cd
+
+locate <name_of_the_file_you_wanna_search_for> # is fast but not up to date (it Indexes all files onece per a day during night)
+
+find <path_you_wanna_search_in> # will search that directory recurcivly
+find /user/bin | grep <name>
+
+find -type d # search only for directory
+find -type f # search only for files
+
+find -type f -size +1M #search only for files that are more than one MB
+
+find -type f -size +1M -size -100M #search only for files that are more than one MB
+
+find -type f -size +1000M -delete
+
+-samefile #search for files that have the same inode
+find . -samefile <file_name>
+
+find . -type f -size +1M -exec <command> {} \; 
+find . -type f -size +1M -exec ls -lah {} \; 
+find . -type f -size +1M -exec rm -rf {} \; 
+# ";" indicates the end of the exec Statement
+# "\" to escape semicolon
+# {} the result of find will be Substituted in Brackets 
+
+# file systems
+#ext4 is the best stable file system for unix
+#zfs 
+#btrfs
+#xfs
+
+diff <file> <file> # show Difference Between two files
+diff -c <file> <file> # show Difference Between two files in more readable way 
+
+md5sum * # will envert files Properties to md5 string
+
+# redirect standard output 
+cat <file_a> > <file_b> #move the content of "a" to "b" (will Override)
+cat <file_a> >> <file_b> #move the content of "a" to "b" (will not Override)
+
+# redirect standard error 
+<command> 2> <file_b> #save error messages to file b
+
+<command> > <file_b> 2>&1
+# redirect standard output & redirect standard error to file be
+
+#standard input 
+<command> <file.txt # use file.txt as an input for the command
+-{ wc -w file.txt 
+wc -w <file.txt
+cat file.txt | wc -w  }- # all of them are the Statement
+
+#"|" redirect standard output into standard input of right command
+
+# grep used to search in strings
+grep "some text" file.txt # will search "some text" for in file.txt and highlight it 
+
+grep "regx" inpt
+
+# tar alone is not Compressing only archive
+tar -c -v -f <target_name> <input_dir> # combine Everything in input_dir and put it in target_name
+tar -cvf <target_name> <input_dir> # f must be at the end of arguments
+
+tar -x -v -f <input_file> <target_path> # extract Everything in input_file and put it in target_path
+tar -xvf <input_file> <target_path> # extract Everything in input_file and put it in target_path
+
+# third party Compressing tools used with tar
+#gzip -z Fastest, a bit Compressing
+#bzip -j Medium, good Compressing
+#xz -J slowest, best Compressing
+
+#compres and Archive
+zip <target> <input>
+unzip <target_file> <path>
+
+#only compres
+gzip <target> #will compress and replace the file
+gunzip <target> #will extract and replace the file
+
+ls -li #list all files with their enode location of memory
+ln <input_file> hardfile.txt # will make a copy of that file but both of them will share the same momory location if u change one it will effect the other one (new file will point to same memory location)
+ln -s <input_file> softfile.txt # new file will point to Original file
+
+stat <file> # show you Details about that file including number of links
+
+sudo chown <user> <file> #change the owner
+sudo chgrp <group> <file> #change the owner
+
+
+ 
+
