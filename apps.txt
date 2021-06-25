@@ -28,7 +28,12 @@ websites: {
 		screen-recorder-for-mac : https://www.videosolo.com/screen-recorder/
 		video-converter : https://videoconverter.wondershare.com
 		video-extention-changer : https://handbrake.fr
+		search-like-spotlight: https://www.alfredapp.com
+		emails: ['https://apps.apple.com/us/app/spark-email-app-by-readdle/id1176895641?mt=12']
+		vpn: ['https://www.privateinternetaccess.com']
+		FTP: ['https://panic.com/transmit/']
 	]
+	edge-extentions: ['lastpass', 'uBlock Origin']
 	databases-managment-systems: ['https://clickhouse.tech']
 	charts: ['https://recharts.org', 'https://www.chartjs.org']
 
