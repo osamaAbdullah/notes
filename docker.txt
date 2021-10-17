@@ -45,6 +45,8 @@ docker network disconnect <network> <container> // disconnect a container to a n
 
 docker network create <network> -- driver (is optional [bridge|host]) // it will create new network on that driver
 
+docker exec -it <container> bash // go inside container
+
 
 
 
@@ -92,6 +94,7 @@ docker network create <network> -- driver (is optional [bridge|host]) // it will
 
 
  docker container run -p 3306:3306 --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql // mysql run with this command in localhost and connected to my pc network
+ docker run -p 0.0.0.0:3306:3306  --name db -e MARIADB_ROOT_PASSWORD=12345 -d mariadb // last working
 
 
 

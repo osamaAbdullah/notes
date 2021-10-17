@@ -1,0 +1,46 @@
+# ssh will try connection using any keys in .ssh directory
+
+ssh <ip> # if you dont specify the user it will consider logedin user on (local machine)
+
+ssh <ip> -p <port>
+
+ssh <username>@<ip> -p <port>
+ssh -i <key> <username>@<ip> -p <port> # when not using the default key
+ssh -i <key> <username>@<ip> -p <port> <command> # to execute one command on server and logout
+
+scp [source] [destination]
+
+scp <local-path> <username>@<ip>:<remote-path> # put files on remote machine
+scp <username>@<ip>:<remote-path> <local-path> # fetch files from remote machine
+
+scp -r <username>@<ip>:<remote-path> <local-path> # fetch directories from remote machine
+scp -r <username>@<ip>:<remote-path>/* <local-path> # fetch directories's cotents (not it self) from remote machine
+
+public key is qofl 
+private key is klil 
+
+you will send your public key to devices that are connected with you and they will encript it based on your public key then you can decrypt them useing your private key
+
+ssh-copy-id <username>@<ip> # append your public key to the remote machine's authorized_keys
+ssh-copy-id -i <key> <username>@<ip> # append your public custom key to the remote machine's authorized_keys
+
+yum install openssh-server
+systemctl start sshd
+
+ssh-keyscan <ip> <ip> # will fetch the public key of mensioned machine
+ssh-keyscan -f <file> # will fetch the public key of mensioned machines in the file
+
+ssh-keygen # will create new keypair
+ssh-keygen -t rsa -b 4096 -p "" -f my_rsa.key # will create new keypair without prompting
+
+ssh-add <key> # will add the key to agent so you do not have to enter passphrase and custom key name
+
+ssh-add -l # list stored agents
+
+which ssh-agent
+eval $(ssh-agent) # make sure the agent is running 
+pgrep ssh-agent # make sure the agent is running 
+ps -ef | grep ssh-agent
+
+who # how many peoples are on the server 
+w # same as who with more information

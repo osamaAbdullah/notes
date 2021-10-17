@@ -1,0 +1,75 @@
+FRONTEND
+- what are the Difference between <div> and <h1>
+- what is the difference between absolute and fixed position
+- what is the difference between block and inlineBlock
+- what is the difference between % and vh measurements
+- how to show one element over another in a web page
+- how center item in the screen and in a div
+- animate elements while scrolling
+- how to toggle sidebar on hover 
+- what is flexbox? what is the difference between grid and flexbox
+- what is sass and what it provides and what are the alternatives (less, stylus...).
+- what are promises in JS and async-await
+- difference between arrow function and ordinary functions
+- what is virtual dom
+- what is generator functions
+- what are (execution context, event loop, hoisting, single thread, JIT, dynamic, interpreted)
+- what is closure in JS
+
+- what is SPA 
+- what are mixins in vue 
+- what is vuex
+- list ways to create vue component with laravel
+- what is webpack
+- what is laravel mix 
+- what is the latest version of vue what are the main new changes
+- what are slotes in vue
+- what is tow way binding
+- what is computed and watchers in vue
+- what are the main life cycles of vue
+
+BACKEND
+- What is a session?
+- what are the objects and classes?
+- Differentiate between require and include? who to solve "many includes" issue  {composer}
+
+- What does (@, ??) operator do in PHP?
+- List some of the features of PHP7.
+- What are magic constants in PHP? 
+- what is static, self keyword what are the differences
+- what are traits
+- why we need interfaces
+- differences between interfaces and abstract classes
+- what is PDO?
+- is array an object in PHP?
+- what is garbage collector and reference counters PHP uses which
+- what is pass by reference and pass by value
+
+- what is laravel and list some alternatives
+- what is MVC?
+- how to handle authentication and authorization with laravel 
+- what is PHPUnit?
+- what is TDD?
+- what are the main laravel packages
+- how to listen to model events in laravel?
+- what are global scopes and custom attributes in laravel?
+- what is the hasManyThrow() relationship in laravel?
+- what is middleware?
+- how to load a huge amount of data faster?
+
+BATADASE
+- what can you do with MySQL?
+- what are tables and views in MySQL?
+- what are indexes in MySQL? how to check details about how the query is running?
+- what are triggers and functions in MySQL?
+- what are normalization and denormalization in MySQL?
+
+GENERAL
+- what is DRY 
+- what are composition and inheritance
+- what is functional programming 
+- what is a declarative programming
+- reactive programming 
+— what do you know about (git, docker, Linux, Nginx, apache, cronjobs, SEO, WebSocket)
+- what is an API what are the most common API patterns
+- GitHub (pull requests, branches, fork, issues, actions, reviews)

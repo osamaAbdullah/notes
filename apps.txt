@@ -7,6 +7,7 @@ websites: {
 	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com', 'https://www.datacamp.com']
 	real-timeCommunicationForWeb: ['webrtc.org']
 	icons: ['zondicons.com']
+	hosting: ['https://www.hostinger.com', 'https://vercel.com', 'https://www.000webhost.com', 'https://www.bluehost.com', 'https://www.ipage.com', 'https://www.digitalocean.com', 'https://www.a2hosting.com', 'https://www.heroku.com']
 	Flowchart-Sketch : ['https://www.canva.com/', 'https://miro.com/', 'https://app.diagrams.net']
 	drawing-on-map : ['https://www.qgistutorials.com/', '']
 	maps : ['https://satellites.pro/', 'https://www.mapbox.com', 'https://www.arcgis.com']
@@ -35,10 +36,15 @@ websites: {
 	]
 	edge-extentions: ['lastpass', 'uBlock Origin']
 	databases-managment-systems: ['https://clickhouse.tech']
-	charts: ['https://recharts.org', 'https://www.chartjs.org']
+	charts: ['https://recharts.org', 'https://www.chartjs.org', 'https://www.fusioncharts.com/', 'https://apexcharts.com/']
+	graphql: ['https://hasura.io/']
 
 }
 
 linux: {
 	terminals: ['ohmyz.sh']
+}
+
+documentaions: {
+	ssh: ['https://www.openssh.com/specs.html]
 }

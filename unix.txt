@@ -8,7 +8,9 @@ rm -dfr <repo_name> # will force remove a directory recurcivly
 php artisan cache:clear
 php artisan route:clear
 php artisan config:clear
+php artisan config:clear --env=testing
 php artisan view:clear
+php artisan clear-compiled
 
 sudo systemctl start php-fpm
 sudo systemctl stop php-fpm
@@ -135,5 +137,122 @@ sudo chown <user> <file> #change the owner
 sudo chgrp <group> <file> #change the owner
 
 
- 
+chmod u-r, g+x, o+r <file>
+x=1, w=2, r=4
 
+set user id (chmode u+s <file>)# will execute the file on behalf of the owner
+set group id (chmode g+s <file>)# will execute the file on behalf of the group
+sticky bit (chmode o+t <file>)# will not let any one delete a folder except the owner 
+
+<command> --help
+man <command>
+man -k <word>
+man -k compress
+whatis <command>
+man <type> <command> # if there are more than one results in whatis command u can look at each with man
+
+sudo visudo #to make another user use the sudo command
+
+halt, reboot, shut down, power off
+
+systemctl get-default
+systemctl set-default <mode> # change default mode (graphical, cmd)
+systemctl isolateT
+
+sudo vi /etc/default/grup #permenently change kernal boot options
+sudo update-grup 
+
+top (press h to get help)
+htop
+ps (ps -aux, ps -ef, ps -ef | grep "search string")
+kill <pid>
+
+grep ssh * #search for ssh in all files
+tail <file> #it shows last 20 lines of a large file 
+tail -n <number of lines you want to be showen> <file>
+tail -f <file> # will show realtime updates on that file
+
+0,30 #in cronjob run in 0 and 30 minute of each hour
+
+atq # show queued commands
+at now + 1 minute <commands>
+<commands> | at now + 1 minute 
+
+<command> > /dev/null #only show message when something goes wrong (ignore statndard output but keep standard error)
+
+/var/log/syslog # see log files of the system
+
+apt install | update | upgrade | full-upgrade | search | info | remove 
+
+
+# figuring out where file come from 
+
+dpkg -S <program> #only search for installed pkg
+apt-file search <program> #search for all the available pkg
+
+#fix hard drive
+1- unmount that hard drive
+2- fsck <drive>
+
+free -h #how much free ram i have
+memtester <how much> <iterations>
+memtester 6GB | 6200M 2 #will test ram
+#memtest86 will test complete ram befor booting the system
+
+[1234, [1..4], $(cat <file>), $(ls)]
+
+for var in 1234 
+do 
+    <command>
+    echo "hi there i'm $var"
+done
+
+adduser #a script that will walk you throw the process
+useradd <name> -m -G <group> -g <group>
+usermod -G <group>, <group>, ... #override groups of a user
+usermod -a -G <group>, <group>, ... #append groups of a user
+userdel -rf <user>
+
+gruopadd
+gruomod
+gruopdel
+
+#this will run when any user login
+/etc/environment
+/etc/bash.bashrc
+/etc/profile
+
+/home/user/.bashrc
+/home/user/.profile
+
+/etc/skel #for any new user everything in "skel" folder will be copied to their home directory 
+
+#all services in linux are running as a user
+#ulimit => user limit limit users
+
+ulimit -Ha
+ 
+ -H #hard limit
+ -S #soft limit
+
+ /etc/security/limits.conf #manage global limits
+
+ /etc/pam.d #change the system auth config
+
+ /etc/network/interfaces #file responsible for network configurations
+
+#systemctl
+
+enabled: will start on boot 
+disabled: will not start on boot 
+
+start
+stop
+restart
+status 
+
+/etc/ssd/ssh_config
+
+lsattr #show permissions
+chattr +i <file> #prevent from deleting 
+chattr +a <file> #you can only append

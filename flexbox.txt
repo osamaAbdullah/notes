@@ -36,3 +36,7 @@
 /* https://tailwindcss.com/ for utility classes each single css property there is a class
 
 /* @apply .c1 .c2 .c3; // merge many css classes into one */
+
+
+# center element tailwindcss
+"flex justify-center items-center"

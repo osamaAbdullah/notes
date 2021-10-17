@@ -1,20 +1,59 @@
- // for guider.profile.info filed
-    public function __get($key)
-    {
-        if (array_key_exists($key, config('custom-configs.profile-info'))) {
-            return $this->info[$key] ?? null;
-        }
-        else {
-            return parent::__get($key);
-        }
-    }
+{
+    "todos": [
+        "1": "create listed users with mensioned permissions",
+        "2": "putting public key of listed users",
+        "3": "after making sure that each new user have access with new credentials and backing up usefull files in his home directory remove the old user",
+        "4": "congfigure the server to prevent root access",
+        "5": "prevent accessing the server with password",
+        "6": "clean up server, put correct configurations, follow best practises",
+        "7": "find mechanism to notify us if server went down",
+        "8": "setup github is such way that no one can merge without approved review",
+        "9": "setup github is such way that it runs code tests and code coverage",
+        "10": "install docker and migrate to apps to the container one by one",
+    ],
+    "users": [
+        "osama_dev": {
+            "password": "cR#@*AgQa5uNvzC^"w,6+]?HE",
+            "permissions": "root"
+        },
+        "niyaz_dev": {
+            "password": "NCUg/F'zm`$6=R}aq,4E2jrd:",
+            "permissions": "root"
+        },
+        "ahmed_dev": {
+            "password": "M{Kb6=k]*H/c:#a>AVDexUt'!",
+            "permissions": "fontend only"
+        },
+        "omer_dev": {
+            "password": "H[X]Wr';sZ{(L+Tk4v3.`-?}U",
+            "permissions": "frontend and backend"
+        },
+        "revan_dev": {
+            "password": "D4&;7y?B3pEY<v]LcTf:e2>k.",
+            "permissions": "frontend and backend"
+        },
+        "abdulbary_sup": {
+            "password": "R@4WuzH$dkB;(_C9"!/ZLENjF",
+            "permissions": "root"
+        },
+        "admin_sup": {
+            "password": "CTJ2nHhm8;~'.!V5PNpA6[t"q",
+            "permissions": "root"
+        },
+        "emergency": {
+            "password": "b4d$XUxYL7?:`Hk%PBu+<9*cA",
+            "permissions": "root"
+        },
+        "faz": {
+            "note" : "keep it the same name and password"
+            "password" : "k2?wCh9rV-@aPcU7LmqSen#^!"
+            "permissions" : "must only have permission to rwx his own home directory"
+        },
+        "nginx": {
+            "note": "user for web server in will act on behalf of web server",
+            "password": "i dont know",
+            "permissions": "must have rwx for all files of code and to the files that is processed(copy, create, update) by the web server"
+        },
 
-    public function __set($key, $value)
-    {
-        if (array_key_exists($key, config('custom-configs.profile-info'))) {
-            $this->info->put($key, $value);
-        }
-        else {
-            parent::__set($key, $value);
-        }
-    }
+    ]
+}

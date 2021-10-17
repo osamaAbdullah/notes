@@ -1,0 +1,11 @@
+1. "search_query" => for exact match
+2. <site:url> search_query => to search from spesific website
+3. search_query -term => search for somthing except term
+4. search_query after:1999 => to search for results after a spesific time
+5. search_query befor:1999 => to search for results befor a spesific time
+6. search_query 1995..1999 (10..100, 10$..50$) => to search for results between spesific time
+7. search_query A|B (A|B), (A|B) C => to search for results for A or B
+8. search_query * => *means any for example site:*.google.com 
+9. search_query filetype:pdf => search for pdf
+10. search_query related:<domain> => search for web sites that are similar to given websites
+11. search_query cache:<url> => to see if google cached your website
