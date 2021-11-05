@@ -77,3 +77,6 @@ hit "t" in github reposetory to search for file
 in sorting 
 asc // from small to big
 desc // from big to small
+
+//laravel mix
+mix.setResourceRoot('/c');
