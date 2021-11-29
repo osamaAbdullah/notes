@@ -1,0 +1,2 @@
+max size of document: 16MB
+limit each replica: 10000 collections 

@@ -1,0 +1,19 @@
+private/symetric key encription:
+- both side should have one shared scret key
+- faster than public key
+- can only be used for confidentiality (deliver messege securely)
+- ESA 
+
+public/asymetric key encription:
+- both side will have a key pair (private, public)
+- slower than private key 
+- can be used for confidentiality and digitail signture (make sure that one that sent that message was the one who owns the private key)
+- RSA, DSA, elliptic curve
+
+Hashing Algurithms 
+- one-way digest
+- unique
+- collision resistance (if two different inputs are hashed it should generate two different outputs)
+_               week    week     good              good
+- fixed length (MD5 32, SHA1 40, SHA2 (SHA256) 62, SHA3 (SHA384))
+openssl dgst -sha384 <file> <file>

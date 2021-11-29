@@ -213,9 +213,14 @@ usermod -G <group>, <group>, ... #override groups of a user
 usermod -a -G <group>, <group>, ... #append groups of a user
 userdel -rf <user>
 
+less /etc/passwd #list all users
+
+
 gruopadd
 gruomod
 gruopdel
+
+less /etc/group #list all groups
 
 #this will run when any user login
 /etc/environment

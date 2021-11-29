@@ -80,3 +80,10 @@ desc // from big to small
 
 //laravel mix
 mix.setResourceRoot('/c');
+
+CSRF Explained
+A cross-site request forgery occurs when a user who is authenticated on a site is forced to make an unwanted request to that site. This request originates from a different origin, and that’s what makes this is a cross-origin request forgery.
+Take for example, a banking application. A user is authenticated on the banking website through cookie(s) in their browser.
+Now, the user visits a different site. This site has the following HTML in their page:
+<img src="http://banking-site.com/transfer.do?acct=ALICE&amount=1000" />
+

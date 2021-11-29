@@ -6,7 +6,7 @@ FRONTEND
 - how to show one element over another in a web page
 - how center item in the screen and in a div
 - animate elements while scrolling
-- how to toggle sidebar on hover 
+- how to toggle sidebar on hover
 - what is flexbox? what is the difference between grid and flexbox
 - what is sass and what it provides and what are the alternatives (less, stylus...).
 - what are promises in JS and async-await
@@ -24,18 +24,17 @@ FRONTEND
 - what is laravel mix 
 - what is the latest version of vue what are the main new changes
 - what are slotes in vue
-- what is tow way binding
+- what is two way binding
 - what is computed and watchers in vue
 - what are the main life cycles of vue
 
 BACKEND
-- What is a session?
+- What is a session, cookie?
 - what are the objects and classes?
 - Differentiate between require and include? who to solve "many includes" issue  {composer}
-
 - What does (@, ??) operator do in PHP?
-- List some of the features of PHP7.
-- What are magic constants in PHP? 
+- List some of the features of PHP7?
+- What are magic functions in PHP? 
 - what is static, self keyword what are the differences
 - what are traits
 - why we need interfaces
@@ -48,6 +47,7 @@ BACKEND
 - what is laravel and list some alternatives
 - what is MVC?
 - how to handle authentication and authorization with laravel 
+- queue and job
 - what is PHPUnit?
 - what is TDD?
 - what are the main laravel packages
@@ -61,7 +61,7 @@ BATADASE
 - what can you do with MySQL?
 - what are tables and views in MySQL?
 - what are indexes in MySQL? how to check details about how the query is running?
-- what are triggers and functions in MySQL?
+- what are triggers and functions and events in MySQL?
 - what are normalization and denormalization in MySQL?
 
 GENERAL

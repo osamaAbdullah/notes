@@ -145,3 +145,4 @@ git config --global --list
 1. git reset --hard 
 2. git clean -df // discard all that changes and remove failes that havent been staged
 
+git fetch --prune // sync local branches with remote branches

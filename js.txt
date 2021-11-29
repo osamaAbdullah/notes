@@ -162,3 +162,22 @@ isDescendant(parent, child) {
 eval(str); // executing a asting of code "eval("console.log("hey there")");" 
 
 "//" floor division
+
+// download file with axios
+axios({
+    url: 'api/analysis/kpi-test/export',
+    data: {
+        kpis: [1,2,3],
+        sites: [1000,1001,1003],
+        date: {"from": "2021-11-10", "to": "2021-11-15", "hours": [1,2,3,4,5]},
+    },
+    method: 'post',
+    responseType: 'blob'
+}).then((response) => {
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(new Blob([response.data]));
+    link.setAttribute('download', 'export.xlsx');
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+});
