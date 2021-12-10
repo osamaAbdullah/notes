@@ -11,6 +11,9 @@ websites: {
 	Flowchart-Sketch : ['https://www.canva.com/', 'https://miro.com/', 'https://app.diagrams.net']
 	drawing-on-map : ['https://www.qgistutorials.com/', '']
 	maps : ['https://satellites.pro/', 'https://www.mapbox.com', 'https://www.arcgis.com']
+	js-date: ['moment-js', day-js]
+	js-books: ['elequent js']
+	js-docs: ['jsinfo']
 	mac-apps: [
 		adblocker-for-safary : https://apps.apple.com/us/app/adblock-pro-for-safari/id1018301773
 		photoshop-Alternative : https://affinity.serif.com/en-gb/photo/

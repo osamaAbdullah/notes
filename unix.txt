@@ -208,17 +208,19 @@ do
 done
 
 adduser #a script that will walk you throw the process
-useradd <name> -m -G <group> -g <group>
-usermod -G <group>, <group>, ... #override groups of a user
-usermod -a -G <group>, <group>, ... #append groups of a user
-userdel -rf <user>
+useradd <user> -m -G <group> -g <group>
+usermod <user> -G <group>, <group>, ... #override groups of a user
+usermod <user> -a -G <group>, <group>, ... #append groups of a user
+userdel <user> -rf <user>
+
+useradd osama_a -g backend_devs -G programmers -m -N
+passwd osama_a
 
 less /etc/passwd #list all users
 
-
-gruopadd
-gruomod
-gruopdel
+groupadd
+groumod
+groupdel
 
 less /etc/group #list all groups
 
@@ -256,8 +258,14 @@ stop
 restart
 status 
 
-/etc/ssd/ssh_config
+/etc/ssh/sshd_config
 
 lsattr #show permissions
 chattr +i <file> #prevent from deleting 
 chattr +a <file> #you can only append
+
+#synchronize time
+date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+
+centOS
+- mysql conf /etc/my.cnf

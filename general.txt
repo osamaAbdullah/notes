@@ -87,3 +87,6 @@ Take for example, a banking application. A user is authenticated on the banking 
 Now, the user visits a different site. This site has the following HTML in their page:
 <img src="http://banking-site.com/transfer.do?acct=ALICE&amount=1000" />
 
+
+Cookies, when used with the "HttpOnly" cookie flag, are not accessible through JavaScript
+You can also set the "Secure cookie" flag to guarantee the cookie is only sent over HTTPS
