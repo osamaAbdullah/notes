@@ -4,12 +4,13 @@ Alt + W ----------->  select all occurance
 Alt + . ----------->  last edit
 Alt + , ----------->  next edit
 Alt + A ----------->  file structure
-Alt + R ----------->  run current test
-Alt + Q ----------->  run failed tests
-Alt + R ----------->  run tests
+Alt + R ----------->  refactor this
+Alt + Q ----------->  open terminal
+Alt + 2 ----------->  run test
+Alt + Z ----------->  toggle project
 
-Alt + D ---------->  collapse Recursivly
-Alt + L ----------->  Expand Recursivly
+Alt + ctrl + - ---------->  collapse Recursivly
+Alt + ctrl + + ----------->  Expand Recursivly
 
 Alt + H ----------->  Split Horizantal
 Alt + V ----------->  Split Vertical
@@ -21,8 +22,9 @@ Alt + M ----------->  GOTO Method
 Alt + C ----------->  GOTO Class
 
 
-Alt + F7 ---------->  search for usage in the hole project
+Alt + ctrl + S ---------->  search for usage in the hole project
 Alt + G ----------->  generate
 Alt + Z ----------->  refactor
+Alt + X ----------->  rename
 ^ + I ---------->  implement method
 ^ + O ------------->  override method
