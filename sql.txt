@@ -51,6 +51,14 @@ select extract(year from now());
 
 indexing: 
 // User EXPLAIN keyword to see if index is used or not 
+// explain:
+- type: type of index //All means full table search
+- rows: scanned rows
+- possible_keys: indexes that are available
+- key: indexes that are used
+
+explain format=json <query>
+
 // you can use "FORCE INDEX (<index_constraint>)" // SELECT * FROM `admins` FORCE INDEX (phone) WHERE `phone` = 12345678
 1- if you put a column in a function index will not work <FUNC>(<col>) / WHERE YEAR(`created_at`)
 2- index are not working 100% when you use inequality <, >, >=, <=
@@ -84,3 +92,11 @@ INNER JOIN contacts t2
 WHERE 
     t1.id < t2.id AND 
     t1.email = t2.email;
+
+
+SELECT 
+    table_name AS `Table`, 
+    round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB` 
+FROM information_schema.TABLES 
+WHERE table_schema = "kpi"
+    AND table_name = "mob_sim_info";

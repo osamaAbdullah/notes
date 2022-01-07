@@ -25,6 +25,6 @@ Alt + C ----------->  GOTO Class
 Alt + ctrl + S ---------->  search for usage in the hole project
 Alt + G ----------->  generate
 Alt + Z ----------->  refactor
-Alt + X ----------->  rename
+Alt + S ----------->  rename
 ^ + I ---------->  implement method
 ^ + O ------------->  override method

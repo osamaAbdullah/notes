@@ -46,6 +46,7 @@ websites: {
 
 linux: {
 	terminals: ['ohmyz.sh']
+	file-structure: ['tree']
 }
 
 documentaions: {

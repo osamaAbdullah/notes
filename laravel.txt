@@ -245,3 +245,21 @@ dispatch(function() {})->delay(now()->addMinutes(2)); // will run the closure in
 
 
 new Crawler($content) //lop throw the HTML
+
+app(Pipeline::class)
+->send($someVar)
+->through([Class::class, Class2::class])
+->then(fn($outputVar) => $outputVar)
+
+class Class2 {
+    public function handle($var, Closure $next)
+    {
+        // ... logic
+        return $next($var)
+    }
+}
+
+Model::observe(ObserverClass::class);
+EventServiceProvider@boot
+
+rm -rf storage/framework/sessions/* // logout all users

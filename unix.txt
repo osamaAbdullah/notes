@@ -269,3 +269,90 @@ date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' 
 
 centOS
 - mysql conf /etc/my.cnf
+
+cd - # goto previous path
+
+
+## bash scripting 
+
+# define variable
+NAME="osama"
+
+# use variable
+echo "hello $NAME"
+echo "hello ${NAME}th"
+
+# accept input & store it in variable
+read -p "Enter your name" Name
+echo "hello $NAME"
+
+echo "Enter your full name:"
+ready FNAME LNAME 
+echo "hello $NAME ${LNAME}"
+
+# condition 
+if [condition]
+then 
+    # code ...
+else 
+    # code ...
+fi
+
+# it should have space
+if ["$NAME" = "osama"]
+then 
+    echo "welcome dear${NAME}"
+fi
+
+# use test in if Statement
+if [ -d /var/www ]
+then 
+    echo "TRUE"
+else 
+    echo "FALSE"
+fi
+
+# loop 
+
+for VAR in $(); do # $() is a list
+    # code ...
+done
+
+for VAR in $(cat myfile.txt); do
+    echo "line: $VAR"
+done
+
+
+for VAR in $(seq 1 10); do
+    echo "line: $VAR"
+done
+
+# substring
+
+echo osama | cut -c2-4 # cut from character 2 to character 4
+
+## functions
+# define 
+function foo(){}
+foo(){}
+
+# call
+foo
+
+# positional paramerter
+$ ./example.sh foo bar
+# inside bash file $0="./example.sh", $1="foo", $2="bar"
+
+
+
+curl
+
+curl <url> -X <method> -d '<payload>' -H '<header>'
+ 
+curl <url> -X <method> -d @< path-of-file> -H '<header>'
+
+du -sh <path> // how much disk it took
+df -h
+
+usermod --lock --expiredate 1970-01-02 <username> // block (loack) user
+usermod --unlock --expiredate '' <username> // unblock (unloack)
