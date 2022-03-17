@@ -11,9 +11,10 @@ websites: {
 	Flowchart-Sketch : ['https://www.canva.com/', 'https://miro.com/', 'https://app.diagrams.net']
 	drawing-on-map : ['https://www.qgistutorials.com/', '']
 	maps : ['https://satellites.pro/', 'https://www.mapbox.com', 'https://www.arcgis.com']
-	js-date: ['moment-js', day-js]
+	js-date: ['moment-js', 'day-js']
 	js-books: ['elequent js']
 	js-docs: ['jsinfo']
+	git-gui: ['https://www.sourcetreeapp.com/']
 	mac-apps: [
 		adblocker-for-safary : https://apps.apple.com/us/app/adblock-pro-for-safari/id1018301773
 		photoshop-Alternative : https://affinity.serif.com/en-gb/photo/
@@ -41,12 +42,16 @@ websites: {
 	databases-managment-systems: ['https://clickhouse.tech']
 	charts: ['https://recharts.org', 'https://www.chartjs.org', 'https://www.fusioncharts.com/', 'https://apexcharts.com/']
 	graphql: ['https://hasura.io/']
+	ERP: ['odoo', 'sap'] 
+	CRM: ['']
+	state-management: ['redux-act', 'reduc', 'flux', 'vuex']
 
 }
 
 linux: {
 	terminals: ['ohmyz.sh']
 	file-structure: ['tree']
+	process-monitors: ['supervisor', 'upstart', 'systemd']
 }
 
 documentaions: {

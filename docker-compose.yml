@@ -1,0 +1,84 @@
+# specify the version
+version: '3.8'
+
+# define services(containsers)
+services:
+
+  # container name
+  backend:
+
+    # path of Dockerfile to create the image
+    # build: ./
+
+    # loger format od build
+    build: 
+
+      # define the dependecy dir for things that are referenced in the docker file
+      context: /path/to/files
+
+      # docker file name (can have customize name)
+      dockerfile: Dockerfile
+
+      # send arguments to that docker file
+      args:
+        - name=value
+
+    # specify published ports
+    ports:
+      - '80:80'
+
+    depends_on:
+      - database
+
+  # container name
+  frontend:
+    build: path
+    ports: 3000:3000
+    volumes:
+        # [delegated] will not write instantly to the container which improves the performance
+      - ./hostPath:/containerPath:ro:delegated
+    
+    # equvalent to [docker run -it] some containers requires it
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+      - database
+    
+    # set a custom container_name 
+    container_name: name
+
+  # container name
+  database:
+    # can be offitial image, full URL to online image ...etc
+    image: 'mongo'
+
+    # set volumes all three types
+    volumes:
+      - data:/data/db
+      - /var/www/app/logs
+      # can be relative path also bun only from compose file [./:/var/www/app/logs:ro]
+      - /User/path:/var/www/app/logs:ro
+
+    # set environment variables (has two syntax[USER_NAME: root], [- USER_NAME=root])
+    environment:
+      PASSWORD: 'secret'
+      USER_NAME: root
+      # - USER_NAME=root
+    
+    # target .env file to get variables from there 
+    env_file:
+      - ./path/to/db.env
+
+    # define a networks that this container should attach to 
+    # by default all servises will be attached to a same network that is generated automatically by docker-compose
+    networks:
+      # - networkName
+
+# only [named volumes] should be listed here in the global scope
+volumes:
+  data:
+
+
+# [NOTES] 
+# when you have single value you need a (-) but if you have key-pair values you don't need that dash(-)

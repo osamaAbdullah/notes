@@ -146,3 +146,8 @@ git config --global --list
 2. git clean -df // discard all that changes and remove failes that havent been staged
 
 git fetch --prune // sync local branches with remote branches
+
+git ls-files --error-unmatch <file name> // if mentioned file is trached by git it will be returned if not it will give [error: pathspec]
+
+git rm --cached <file> // forget a file untrack
+git rm -r --cached <folder> // forget a directory untrack

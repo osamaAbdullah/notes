@@ -109,3 +109,29 @@ passing by refrance:
 function foo() use(&$var){}
 
 date('Y-m-d H:i:s')
+
+
+composer dump-autoload -o // optimize for production
+
+// can i change many things in this class without breaking things outside? if yes then you have a good design 
+// encapsulation hides the internal state 
+// abstraction hides the actual implementation of it
+// polymophizm it can be passed with different implementation (any class that implements the same interface)
+
+[$this] can also refere to sub_class instances
+
+
+# [traits]
+# if a function in a trait is overrided in the class that used that trait the function in the class will have hier president 
+# if a function in a parent class is overrided in the trait that is being used in the sub_class the function in the trait will have higher president
+
+# [obj == obj] if they have the same attributes and their attributes have the same values (lose comparison) it will be true
+# [obj === obj] only if they point to the same object then it will be true
+
+$copiedObject = clone $originalObject; // also magic method __clone will be called 
+
+# [serialize()] will convert object to a string to be stored somewhere then recovered later using [unserialize()]
+# before [serialize()] [__sleep] will be called and after [unserialize()] [__wakeup] will be called
+# [__sleep] will return an array that defines the Properties that will be serialized
+# [__serialize] is newer alternative for [__sleep] & [serialize()], and [__deserialize] is newer alternative for [__wakeup] & [unserialize()]
+# the class budy should be still there then the object will work only class property will be converted when using [serialize]

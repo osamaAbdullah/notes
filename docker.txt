@@ -1,6 +1,8 @@
-docker container run --publish 80(os):80(container) --network <network> --rm(remove the container when its done) nginx // download and run ngninx container (--publish): send the trafic to the container(if you want to access it from outside of docker)
+docker container run --publish 80(os):80(container) --network <network> --rm(remove the container when its stoped) nginx // download and run ngninx container (--publish): send the trafic to the container(if you want to access it from outside of docker)
+                     -p 80:80 // dose the same as (--publish )
 
 docker container run --publish 80:80 --detach nginx // run in the background 
+                                     -d // does the same
 
 docker container run --publish 80:80 --detach --name <name> nginx // name the container
 
@@ -22,9 +24,9 @@ docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_PASSWORD=12345 my
 
 docker image ls // list local images
 
-docker container run -it --name webserver nginx bash  // run the container and go inside that container using bash
+docker container run -it --name webserver nginx bash  // run the container and go inside that container using bash (recive input send output)
 
-docker container start -ai <container_name>  // run the container existing and go inside that container using bash
+docker container start -ai <container_name>  // run the container existing and go inside that container using bash (-a => attach, -i => interactive)
 
 docker container exec -it <container_name>mysql <program_name>bash // open menstioned-program(bash) in mentioned already running container
 
@@ -47,11 +49,83 @@ docker network create <network> -- driver (is optional [bridge|host]) // it will
 
 docker exec -it <container> bash // go inside container
 
+docker build <path-of-`Dockerfile`> // to build the image based on the Dockerfile that is in that path
+
+// image is layer-based it will get everything from the cache unless one layer changes then all subsequent layers will be reevaluated
+// if two containers uses the same image they will share the invironment and only the different parts will be reproccessed
+// the image contains the environment and the container only contains another alyer on it that's why ypu can not delete an image that has a containers
+
+docker ps --help
+docker start --help
+docker run --help
 
 
+docker run <> // will create new container from image  
+
+docker attach <container> // will reattach terminal to the output of the container
+docker logs -f <container> // will show logs of a container and keep listening 
+docker rmi <image> //  remove images
+docker image prune -a // remove all unused images (images that don't have containers)
+docker inspect <image> // show details abou an image
+
+docker cd /path <container>:/path // copy to/from container 
+docker tag <old_image_name:gat> <new_image_name:tag>
+docker login 
+docker logout
+docker push <image>
+docker pull <image>
+
+docker exec -it nginx /bin/bash
+
+docker build --target <step_name> -f <dockerfile>
+
+# [Named Volumes] when using (docker run -v name:/container/path) the files will remain on the OS under the mentioned name but still the path is unknown and managed by docker
+docker run -v name:/container/path
+
+# if there are multiple (-v /path) thw more spesific path (/var/www/app/node_moudle) will override more general path (/var/www/app)
+docker run -p 8000:80 --name nginx --rm -v "/Users/os/PhpstormProjects/docker-test/mount:/var/www/app" -v /var/www/app/mount nginx
+# [-v "/Users/os/PhpstormProjects/docker-test/mount:/var/www/app"] => two way binding
+# [-v /var/www/app/mount] will excluede this path from "two way binding" because it's more spesific path 
 
 
+docker run -p 8000:80 --name nginx --rm -v "/Users/os/PhpstormProjects/docker-test/mount:/var/www/app:ro" -v /var/www/app/mount nginx
+# [-v "/Users/os/PhpstormProjects/docker-test/mount:/var/www/app:ro"] => changes of host will be applied to the container only (changes of the container will not be applied to the host)
+# mostly for development 
 
+# [Anonymos Volumes] [/path] => only to use host file system instead of containers (sora says it's more efficient)
+# [Named Volumes] [name:/path] => to share data between containers and also save them after container is removed
+# [Bind Mount] [/path:/path] => two way binding (the host path should be abslute start with '/' not relative)
+
+# [ARG] => build time arguments (only in Dockerfile)
+# [ENV] => run time variables (in both Dockerfile and application in container) (can be set on Dockerfile (ENV PORT 8080) and --env when runningthe image(-e PORT=8080))
+# [ENV] => also you can use .env file by (--env--file /Users/os/PhpstormProjects/docker-test/.env)
+
+
+[network]
+container => public web
+# by default you can send requests to the public web inside a container out of the box
+
+container => host(os)
+# you can use "host.docker.internal" to point to the OS network like (localhost)
+
+container => container
+# 1. each container has it's own private IP you can point to from other container (docker inspect <container> )["IPAddress"]
+# 2. docker create network <network_name>
+# then you can attach the container to the custom network when creating the container by passing (--network <network_name>)
+# then since both containers has the same network they can point to each other by their name
+
+[utility containers]
+docker run -it node init # [init] will override the CMD["node"] that set up on the Dockerfile
+
+# you can bind a dir to the container then run the code there and it will reflect the host file system
+
+docker-compose run --rm <service_name> <CMD>
+
+docker-compose up --build -d service_1 service_2
+docker-compose run --rm composer <CMD>
+
+[NOTES]
+1. some images need interaction to work or they will be closed right away you can achive that with (docker run -it <image>)
 
 
 

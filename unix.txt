@@ -12,6 +12,9 @@ php artisan config:clear --env=testing
 php artisan view:clear
 php artisan clear-compiled
 
+// check if queue is running
+ps -aux | grep queue
+
 sudo systemctl start php-fpm
 sudo systemctl stop php-fpm
 sudo systemctl reload php-fpm
@@ -351,8 +354,55 @@ curl <url> -X <method> -d '<payload>' -H '<header>'
  
 curl <url> -X <method> -d @< path-of-file> -H '<header>'
 
-du -sh <path> // how much disk it took
+du -sh <path> // how much disk it took (size)
 df -h
 
 usermod --lock --expiredate 1970-01-02 <username> // block (loack) user
 usermod --unlock --expiredate '' <username> // unblock (unloack)
+
+
+rsync <options> <source> <destination> // copy file betweeb servers
+rsync -avzh /home/osama user@ip:/path/to
+
+# [supervisor]
+
+supervisorctl help
+
+    # name the task 
+    [program:laravel-worker]
+
+    # define the command
+    command=php artisan queue:work
+
+    # set a working Directory
+    directory=/usr/share/nginx/azimuth/
+
+    autostart=true // also [autostart=yes]
+    autorestart=true // also [autorestart=yes]
+
+    # how many time it should try to start it befor concireding it as failed
+    startretries=3
+
+    # send standard error logs here
+    stderr_logfile=/path/to/the/log/file
+    
+    # send standard output logs here
+    stdout_logfile=/path/to/the/log/file
+
+    # run the command as mentioned use in not mentioned it will run it as a root
+    user=nginx
+
+    # set environment variables
+    environment=KEY_1='value_1',KEY_2='value_2'
+
+    # You can check if a process listens on a TCP or UDP port with 
+    netstat -tuplen
+
+# close a port
+firewall-cmd --zone=public --remove-port=6000/tcp
+firewall-cmd --runtime-to-permanent 
+firewall-cmd --reload
+
+# open port 
+firewall-cmd --zone=public --add-port=6001/tcp --permanent
+firewall-cmd --reload

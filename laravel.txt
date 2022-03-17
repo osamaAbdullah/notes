@@ -263,3 +263,6 @@ Model::observe(ObserverClass::class);
 EventServiceProvider@boot
 
 rm -rf storage/framework/sessions/* // logout all users
+
+// check if queue is running 
+ps -aux | grep queue

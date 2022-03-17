@@ -16,6 +16,34 @@ FRONTEND
 - what are (execution context, event loop, hoisting, single thread, JIT, dynamic, interpreted)
 - what is closure in JS
 
+
+[
+frontend Interview questions
+
+1. what is the difference between display and position 
+2. what is the difference between absolute and fixed position
+3. what is sass lass stylus 
+4. what what is flex box
+5. what is virtual dom
+6. what are promises and asynchronous 
+7. what is redux
+8. difference between arrow function and ordinary functions
+9. what are generator functions 
+10. did you write tests for your code
+11. what is TDD
+12. what is DRY 
+13. what is composition 
+14. what is functional programming 
+15. what is declarative programming 
+16. design patterns 
+17. closure in JS
+18. reactive programming 
+19. vue version
+20. graphQL vs rest
+21. Websocket
+]
+
+
 - what is SPA 
 - what are mixins in vue 
 - what is vuex
@@ -29,34 +57,53 @@ FRONTEND
 - what are the main life cycles of vue
 
 BACKEND
-- What is a session, cookie?
-- what are the objects and classes?
-- Differentiate between require and include? who to solve "many includes" issue  {composer}
-- What does (@, ??) operator do in PHP?
-- List some of the features of PHP7?
-- What are magic functions in PHP? 
-- what is static, self keyword what are the differences
-- what are traits
-- why we need interfaces
-- differences between interfaces and abstract classes
-- what is PDO?
-- is array an object in PHP?
-- what is garbage collector and reference counters PHP uses which
-- what is pass by reference and pass by value
-- nginx appache
+1 - what is http? what is state less
+2 - Differentiate between GET and POST?
+3 - What are sessions and cookies?
+4 - what are the objects and classes in php?
+5 - Does PHP support multiple inheritances?
+6 - List some global variables in PHP? and describe few of them?
+7 - Differentiate between require and include? how to solve "many includes" problem?
+8 - what is composer what features it offers?
+9 - what are namespaces?
+10 - What does (@, ??, <=>) operator do in PHP?
+11 - List some of the features of PHP7 and PHP8?
+12 - What are magic functions in PHP? list some of them? 
+13 - what are traits?
+14 - why we need interfaces?
+15 - differences between interfaces and abstract classes?
+16 - what is PDO? 
+17 - what is pass by reference and pass by value
+18 - how to copy an object in PHP?
+19 - what is garbage collector and reference counters PHP uses which?
+20 - Does JavaScript interact with PHP?
+21 - How to terminate the execution of a script in PHP?
+22 - nginx appache
+23 - when deploying a PHP application what you will do to enhance the security?
+24 - what are generators?
 
-- what is laravel and list some alternatives
 - what is MVC?
-- how to handle authentication and authorization with laravel 
-- queue and job
+- what is laravel?
+- What is the templating engine used in Laravel?
+- What are available databases supported by Laravel?
+- What is an artisan?
+- How to put Laravel applications in maintenance mode?
+- What are Models?
+- What is web RTC?
+- What is throttling and how to implement it in Laravel?
+- how to handle authentication and authorization with laravel?
+- what are queues and jobs?
+- What are collections?
 - what is PHPUnit?
 - what is TDD?
-- what are the main laravel packages
-- how to listen to model events in laravel?
-- what are global scopes and custom attributes in laravel?
-- what is the hasManyThrow() relationship in laravel?
+- list some official laravel packages
+- how to observe to a model events in laravel?
+- what are global scopes and accessors (custom attributes) in laravel?
+- what is the hasManyThrow() relationship in laravel give an example?
 - what is middleware?
-- how to load a huge amount of data faster?
+- What is a Service Container in Laravel?
+- talk about a problem that you faced?
+- what is websocket
 
 BATADASE
 - what can you do with MySQL?
