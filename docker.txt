@@ -1,3 +1,6 @@
+docker version
+docker info
+
 docker container run --publish 80(os):80(container) --network <network> --rm(remove the container when its stoped) nginx // download and run ngninx container (--publish): send the trafic to the container(if you want to access it from outside of docker)
                      -p 80:80 // dose the same as (--publish )
 
@@ -124,11 +127,17 @@ docker-compose run --rm <service_name> <CMD>
 docker-compose up --build -d service_1 service_2
 docker-compose run --rm composer <CMD>
 
+docker history <image_name> # show layers of an image 
+docker inspect <image_name> # show metadata of an image 
+
 [NOTES]
 1. some images need interaction to work or they will be closed right away you can achive that with (docker run -it <image>)
 
 
+docker run -it --rm --user $(id -u):$(id -g) -v $HOME:$HOME:rw -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:$PWD:rw -w $PWD alpine/git pull
 
+
+postgres
 
 
 

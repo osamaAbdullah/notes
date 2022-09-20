@@ -12,6 +12,8 @@ php artisan config:clear --env=testing
 php artisan view:clear
 php artisan clear-compiled
 
+https://stackoverflow.com/questions/63203144/file-could-not-be-opened-in-append-mode-failed-to-open-stream-permission-denie
+
 // check if queue is running
 ps -aux | grep queue
 
@@ -217,6 +219,7 @@ usermod <user> -a -G <group>, <group>, ... #append groups of a user
 userdel <user> -rf <user>
 
 useradd osama_a -g backend_devs -G programmers -m -N
+useradd back_up -m -N
 passwd osama_a
 
 less /etc/passwd #list all users
@@ -366,6 +369,8 @@ rsync -avzh /home/osama user@ip:/path/to
 
 # [supervisor]
 
+https://stackoverflow.com/questions/45224707/install-and-configure-supervisord-on-centos-7-to-run-laravel-queues-permanently
+
 supervisorctl help
 
     # name the task 
@@ -406,3 +411,80 @@ firewall-cmd --reload
 # open port 
 firewall-cmd --zone=public --add-port=6001/tcp --permanent
 firewall-cmd --reload
+
+uname #show system info
+free #show memory RAM usage 
+ps # current running process
+id # cureent user id
+ctrl + R # search in history commands
+
+
+# configure IPs Centos 7 
+
+/etc/sysconfig/network-scripts/ifcfg-ens224
+
+HWADDR=00:0C:29:7D:AB:4D
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+IPADDR=192.168.43.227
+PREFIX=29
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens224
+UUID=e2b33879-6a2f-3db1-8e09-956367b523cd
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+DNS1=8.8.8.8
+ZONE=public
+
+[configure-static-ip-centos]
+# nmtui
+# systemctl status NetworkManager.service
+or
+# nmcli -o
+
+/etc/sysconfig/network-scripts/ifcfg-ens192
+
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens192
+UUID=b3d1cb4a-e103-4359-9198-7390b6ee0f2b
+DEVICE=ens192
+ONBOOT=yes
+IPADDR=95.170.206.130
+PREFIX=29
+GATEWAY=95.170.206.129
+DNS1=8.8.8.8
+IPV6_PRIVACY=no
+
+env # to show environment variables of the system
+type
+whereis # path of the program
+export VAR=<value> # define a variable in the terminal and add it to the env
+export VAR=$VAR:<value> # append to a variable in the terminal and add it to the env
+echo $? # show exit code of the previous command
+ls -lah --block-size=M name* # list any thing start with "name" it's a regular expresion
+
+hexdump <file> # display file contents in ascii, decimal, hexadecimal, or octal
+strings <file> # For each file given, GNU strings prints the printable character sequences that are at least 4 characters long
+
+command_1 && command_2 # if command_1 executed succcessfully then run command_2
+command_1 ; command_2 # run command_1 then run command_2
+
+ss -naptul # show application used ports

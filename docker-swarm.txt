@@ -1,0 +1,25 @@
+stack -> services -> tasks -> container
+
+docker node ls # list of nodes (servers) in the swarm
+
+docker swarm ls # list of stacks running in swarm
+
+[stack] => namage multiple services
+docker stack ps <stack_name> # list of tasks runnig in a stack
+
+docker stack deploy -c <compose_file> <stack_name>
+
+
+
+[service] => instances of an image
+docker service <stack_name> # list of replicas runnig in a service
+docker service scale <servicename>=<number of replicas> # Scale service Horizontally
+docker service create -p 80:8080 - -name <service_name> <nginx Image: version> # Start Some NGINX Service on some port
+docker service update - -image <Nginximage:version> <servicename> # Enhance Deployed Image Version
+docker service update - -publish-rm <old_port> - -publish- add <new_port>:80 # Change Port of running service
+docker service rm <servicename>
+
+
+
+
+

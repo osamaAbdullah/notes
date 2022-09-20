@@ -264,5 +264,37 @@ EventServiceProvider@boot
 
 rm -rf storage/framework/sessions/* // logout all users
 
+Route::get('/posts/{post?}', fn() => null); // optional paramerters
+Route::get('/posts/{post}', fn() => null)->where('post', '[0-9]+'); // regular exprestion
+Route::get('/posts/{post}/{comment}', fn() => null)->where(['post' => '[0-9]+', 'comment' => 'regx']); // regular exprestion
+# in RouteServisProvider@boot
+Route::pattern('id', '[0-9]+')
+
 // check if queue is running 
 ps -aux | grep queue
+
+in middleware you can run the code befor or after other middlewares
+
+# befor 
+// action 
+return next($request);
+
+# before
+$request = next($request);
+// action 
+return $request;
+
+
+# trigger a spesific class when type hinting it's interface to be replaced easily in future
+AppServiceProvider@boot
+$this->app->bind('path\to\interface', 'path\to\the\class')
+
+in Controller
+$this->middleware(<middleware>);
+$this->middleware(<middleware>)->only(<method>);
+$this->middleware(<middleware>)->except(<methods>);
+
+# redirecting to a controller
+redirect()->action([Class::class, 'method'])
+redirect()->away('https://google.com')
+

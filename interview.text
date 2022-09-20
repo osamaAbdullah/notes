@@ -30,21 +30,11 @@ frontend Interview questions
 8. difference between arrow function and ordinary functions
 9. what are generator functions 
 10. did you write tests for your code
-11. what is TDD
-12. what is DRY 
-13. what is composition 
-14. what is functional programming 
-15. what is declarative programming 
-16. design patterns 
 17. closure in JS
-18. reactive programming 
 19. vue version
 20. graphQL vs rest
-21. Websocket
 ]
 
-
-- what is SPA 
 - what are mixins in vue 
 - what is vuex
 - list ways to create vue component with laravel
@@ -57,7 +47,6 @@ frontend Interview questions
 - what are the main life cycles of vue
 
 BACKEND
-1 - what is http? what is state less
 2 - Differentiate between GET and POST?
 3 - What are sessions and cookies?
 4 - what are the objects and classes in php?
@@ -78,24 +67,22 @@ BACKEND
 19 - what is garbage collector and reference counters PHP uses which?
 20 - Does JavaScript interact with PHP?
 21 - How to terminate the execution of a script in PHP?
-22 - nginx appache
 23 - when deploying a PHP application what you will do to enhance the security?
 24 - what are generators?
+25 - dose php has multi threading? how to run two php files concurently
 
 - what is MVC?
 - what is laravel?
 - What is the templating engine used in Laravel?
 - What are available databases supported by Laravel?
-- What is an artisan?
+- What is the artisan in laravel?
 - How to put Laravel applications in maintenance mode?
 - What are Models?
-- What is web RTC?
 - What is throttling and how to implement it in Laravel?
-- how to handle authentication and authorization with laravel?
+- how to handle authentication and authorization in laravel?
 - what are queues and jobs?
 - What are collections?
 - what is PHPUnit?
-- what is TDD?
 - list some official laravel packages
 - how to observe to a model events in laravel?
 - what are global scopes and accessors (custom attributes) in laravel?
@@ -103,21 +90,42 @@ BACKEND
 - what is middleware?
 - What is a Service Container in Laravel?
 - talk about a problem that you faced?
-- what is websocket
+- Lecture -> belongsToMany -> Group -> belongsTo -> Department {get department(s) of a Lecture without joins?}
 
 BATADASE
 - what can you do with MySQL?
 - what are tables and views in MySQL?
 - what are indexes in MySQL? how to check details about how the query is running?
 - what are triggers and functions and events in MySQL?
-- what are normalization and denormalization in MySQL?
+- what is normalization and denormalization in MySQL?
+
+NGINX
+- what is nginx 
+- in which network layer dose nginx work
+- what is load balancing how to do it in nginx -> layer 4 and layer 7 load-balancing
+- what is revers poroxy in nginx
+
 
 GENERAL
+- what is TDD
 - what is DRY 
-- what are composition and inheritance
+- what is SPA 
 - what is functional programming 
+- design patterns 
+- what is the differences between composition and inheritance
 - what is a declarative programming
 - reactive programming 
-— what do you know about (git, docker, Linux, Nginx, apache, cronjobs, SEO, WebSocket)
-- what is an API what are the most common API patterns
 - GitHub (pull requests, branches, fork, issues, actions, reviews)
+— what do you know about (docker, Linux, cronjobs, SEO)
+- what is an API what are the most common API patterns
+- Websocket
+- What is web RTC, HTTP, TCP, UDP, WS?
+
+- SSL TLS 
+- hex, base64
+- Hashing (md5, sha256, argon2)
+- encription:
+  - Symmetric: (shared key) AES, DES, IDEA
+  - Asymmetric: (public-private keys) RSA, DSA
+- signing
+

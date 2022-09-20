@@ -7,7 +7,7 @@ websites: {
 	programmingToturials: ['pluralsight.com', 'laracasts.com', 'oreilly.com', 'https://www.datacamp.com']
 	real-timeCommunicationForWeb: ['webrtc.org']
 	icons: ['zondicons.com']
-	hosting: ['https://www.hostinger.com', 'https://vercel.com', 'https://www.000webhost.com', 'https://www.bluehost.com', 'https://www.ipage.com', 'https://www.digitalocean.com', 'https://www.a2hosting.com', 'https://www.heroku.com']
+	hosting: ['https://www.hostinger.com', 'https://vercel.com', 'https://www.000webhost.com', 'https://www.bluehost.com', 'https://www.ipage.com', 'https://www.digitalocean.com', 'https://www.a2hosting.com', 'https://www.heroku.com', 'Contabo', 'Vultr', 'Linode']
 	Flowchart-Sketch : ['https://www.canva.com/', 'https://miro.com/', 'https://app.diagrams.net']
 	drawing-on-map : ['https://www.qgistutorials.com/', '']
 	maps : ['https://satellites.pro/', 'https://www.mapbox.com', 'https://www.arcgis.com']
@@ -23,6 +23,7 @@ websites: {
 		cleaner-and-uninstaller : https://macpaw.com/cleanmymac
 		apple-video-editor : https://www.apple.com/final-cut-pro/
 		torrent-downloader : https://www.qbittorrent.org
+		torrent-downloader : https://www.mac-downloader.com/
 		vlc-video-player : https://www.videolan.org/vlc/
 		VPN : https://www.betternet.co
 		read-hard-disk-from-windows : https://mounty.app
@@ -37,15 +38,19 @@ websites: {
 		emails: ['https://apps.apple.com/us/app/spark-email-app-by-readdle/id1176895641?mt=12']
 		vpn: ['https://www.privateinternetaccess.com']
 		FTP: ['https://panic.com/transmit/']
+		VSCode-extentions: ['Draw.io Integration', ''] 
 	]
 	edge-extentions: ['lastpass', 'uBlock Origin']
 	databases-managment-systems: ['https://clickhouse.tech']
 	charts: ['https://recharts.org', 'https://www.chartjs.org', 'https://www.fusioncharts.com/', 'https://apexcharts.com/']
 	graphql: ['https://hasura.io/']
-	ERP: ['odoo', 'sap'] 
+	ERP: ['odoo', 'sap']
 	CRM: ['']
 	state-management: ['redux-act', 'reduc', 'flux', 'vuex']
-
+	image-similarity: ['https://deepai.org/machine-learning-model/image-similarity'] 
+	firebase-Alternatives: ['https://appwrite.io/', 'https://docs.amplify.aws/', 'https://supabase.com/']
+	database-wraper: ['https://hasura.io/']
+	react-packages: ['']
 }
 
 linux: {

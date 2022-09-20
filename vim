@@ -5,6 +5,8 @@ command mode {
     # syntax highlighting
     :syntax on
 
+    :set expandtab shiftwidth=4 softtabstop=4 
+
     j # down
     k # up
 

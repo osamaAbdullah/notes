@@ -98,9 +98,12 @@ npm cache clear --force
 npm install
 
 you can only get a cirtificate from [let's encrpt] 
-certbot certonly --standalone --preferred-challenges http -d example.com
+certbot certonly --standalone --preferred-challenges http -d erbil-center.org
 
 
 
 
 https://www.vfsglobalservices-germany.com/Global-Appointment/Home/SelectVAC?q=dePiaPfL2MJ7yDPEmQRU6fRZbx3aIpSal6PdG3Bxqq7rSNU6HabciCVot9dEwkhd
+
+
+
