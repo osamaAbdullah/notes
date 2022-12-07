@@ -1,5 +1,7 @@
 http://lampblogs.com/blog/install-postgresql-in-xampp-on-windows-and-integrate-phppgadmin
 
+port=5432
+
 psql --help
 
 \l => list all databases
@@ -53,5 +55,33 @@ select * from pg_available_extensions; // list all extensions
 create extension if not exists "<extension>"; // install an extension
 
 \copy (select * from <table>) to '<file>' delimiter ',' csv header; // export result of query
+\copy (select * from admins) to 'osama.sql' sql; // export result of query
+
+[export]
+pg_dump -U <dbusername> <dbname> > dbexport.pgsql
+
+pg_dump -U local_system_bd_laravel_app_stage local_system_bd_stage > dbexport.pgsql
+
+[import]
+psql -U username dbname < dbexport.pgsql
+
+psql -U local_system_bd_laravel_app_stage osama_test < dbexport.pgsql
+
+[backup]
+docker exec -t 0308961bbfa3 pg_dump --host "localhost" --port 5432 --username "postgresuser" --dbname "dbname" --no-owner --no-privileges > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+docker exec -t d29eaf48a8d6 pg_dump --username "local_system_bd_laravel_app_stage" --dbname "local_system_bd_stage" --no-owner --no-privileges > dump_`date +%Y-%m-%d"__"%H:%M:%S`.sql
+
+docker exec -t abd8522bce7c pg_dump \
+-U local_system_bd_laravel_app_stage \
+-d local_system_bd_stage \
+--no-owner --no-privileges \
+--rows-per-insert=65000 --column-inserts \
+> dump_`date +%Y-%m-%d"__"%H:%M:%S`.sql
+
+[restore]
+cat <db.sql> | docker exec -i <container> psql --username <username> <db_name>
+cat /home/apps/local-system/prod/osama.sql | docker exec -i 5f45d9721e87 psql --username local_system_bd_laravel_app_stage local_system_bd_stage
 
 
+cat /home/apps/local-system/prod/osama.sql | docker exec -i 825280ee5876 psql --username local_system_bd_laravel_app local_system_bd

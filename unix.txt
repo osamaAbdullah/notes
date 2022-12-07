@@ -270,7 +270,8 @@ lsattr #show permissions
 chattr +i <file> #prevent from deleting 
 chattr +a <file> #you can only append
 
-#synchronize time
+# synchronize time
+# may need to install wget
 date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 
 centOS
@@ -488,3 +489,24 @@ command_1 && command_2 # if command_1 executed succcessfully then run command_2
 command_1 ; command_2 # run command_1 then run command_2
 
 ss -naptul # show application used ports
+
+[SSL]
+you can only get a cirtificate from [let's encrpt] 
+certbot certonly --standalone --preferred-challenges http -d erbil-center.org
+
+certbot certonly --manual --preferred-challenges dns
+dig -t txt +short _acme-challenge.net-performance.online
+openssl x509 -in /etc/letsencrypt/live/p.erbil-center.org/fullchain.pem
+
+# dev APIs
+certbot certonly --webroot -w /usr/share/nginx --preferred-challenges http -d dev.np.net-performance.online,000.net-performance.online,dev.az.net-performance.online,dev.bc.net-performance.online,dev.co.net-performance.online,dev.mn.net-performance.online,dev.md.net-performance.online,dev.mt.bc.net-performance.online,dev.mt.net-performance.online,dev.rc.net-performance.online
+
+[activate-centos-8]
+timedatectl
+timedatectl set-timezone "Asia/Baghdad"
+dnf clean all
+rm -rf /var/cache/dnf
+cd /etc/yum.repos.d/
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+dnf update

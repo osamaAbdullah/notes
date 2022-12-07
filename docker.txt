@@ -179,6 +179,8 @@ postgres
  docker container run -p 3306:3306 --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql // mysql run with this command in localhost and connected to my pc network
  docker run -p 0.0.0.0:3306:3306  --name db -e MARIADB_ROOT_PASSWORD=12345 -d mariadb // last working
 
+ docker run -p 0.0.0.0:5432:5432  --name db-postgres -e POSTGRES_PASSWORD=12345 -e POSTGRES_DB=test -e POSTGRES_USER=root -d postgres:15.1-alpine // last working
+
 
 
 

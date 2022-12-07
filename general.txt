@@ -97,9 +97,6 @@ rm package-lock.json yarn.lock
 npm cache clear --force
 npm install
 
-you can only get a cirtificate from [let's encrpt] 
-certbot certonly --standalone --preferred-challenges http -d erbil-center.org
-
 
 
 

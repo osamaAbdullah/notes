@@ -192,32 +192,32 @@ global scope: make every call to a model scoped
 // you can listen to login event with a listener by adding custom listener and adding it in EventServiceProvider.php \Illuminate\Auth\Events\Login::class => [ CustomListener::class ]
 // stubs used for overriding default templates 
 
-you can use obsorver instead of model events (protected static function boot())
-App\model::obsorve(new obsorveClass()) // in EventServiceProvider.php
+you can use observer instead of model events (protected static function boot())
+App\model::observe(new observeClass()) // in EventServiceProvider.php
 
 public function before(User $user) 
-{ // this function in policy will be called befor any thing id it returns true no other method will be hited
-  // but if it returns false then other methods will be hited
+{ // this function in policy will be called before any thing id it returns true no other method will be hit
+  // but if it returns false then other methods will be hit
     return true
 }
 
-$gate->before(function($user) { // apply golobal autherization for super administrator
+$gate->before(function($user) { // apply global authorization for super administrator
     if($user->isAdmin()) return true;
 }) 
 
 ./vendor/bin/phpunit // to test
 
 in AppServiceProvider@boot
-view()->share(<var_name>, <value>); // this variable will be accessebile in all views
+view()->share(<var_name>, <value>); // this variable will be accessible in all views
 
 Event::listen(<name>, function(){});
 Event::fire(<name>);
 
 srt::studly(<str>); // remove spaces 
 
-$this->output->progressStart(); // add progressbar for command
-$this->output->progressAdvance(); // add progressbar for command
-$this->output->progressFinish(); // add progressbar for command
+$this->output->progressStart(); // add progress-bar for command
+$this->output->progressAdvance(); // add progress-bar for command
+$this->output->progressFinish(); // add progress-bar for command
 
 composer require laravel/breeze --dev // new version of laravel ui
 
@@ -264,18 +264,18 @@ EventServiceProvider@boot
 
 rm -rf storage/framework/sessions/* // logout all users
 
-Route::get('/posts/{post?}', fn() => null); // optional paramerters
-Route::get('/posts/{post}', fn() => null)->where('post', '[0-9]+'); // regular exprestion
-Route::get('/posts/{post}/{comment}', fn() => null)->where(['post' => '[0-9]+', 'comment' => 'regx']); // regular exprestion
-# in RouteServisProvider@boot
+Route::get('/posts/{post?}', fn() => null); // optional parameters
+Route::get('/posts/{post}', fn() => null)->where('post', '[0-9]+'); // regular expression
+Route::get('/posts/{post}/{comment}', fn() => null)->where(['post' => '[0-9]+', 'comment' => 'regx']); // regular expression
+# in RouteServiceProvider@boot
 Route::pattern('id', '[0-9]+')
 
 // check if queue is running 
 ps -aux | grep queue
 
-in middleware you can run the code befor or after other middlewares
+in middleware you can run the code before or after other middleware
 
-# befor 
+# before 
 // action 
 return next($request);
 
@@ -285,7 +285,7 @@ $request = next($request);
 return $request;
 
 
-# trigger a spesific class when type hinting it's interface to be replaced easily in future
+# trigger a specific class when type hinting it's interface to be replaced easily in future
 AppServiceProvider@boot
 $this->app->bind('path\to\interface', 'path\to\the\class')
 
@@ -297,4 +297,64 @@ $this->middleware(<middleware>)->except(<methods>);
 # redirecting to a controller
 redirect()->action([Class::class, 'method'])
 redirect()->away('https://google.com')
+
+ziggy to map Frontend routes to the backend routes
+https://github.com/tighten/ziggy
+
+$query->when($boolean, fn($query, $boolean) => $query)
+
+arr->through(fn($item) => $item) // just like .map but it will not return a new array instead it will alter the original one (you can use it to alter the data pf the paginate object)
+Model::paginate()->withQueryString() // will preserve the query string for the urls
+
+public function setPasswordAttribute($value)
+{
+    $this->attributes['password'] = bcrypt($value)
+}
+
+public function toArray() // on the model class
+{
+    return [];
+}
+
+$hidden = []; // hide the listed columns when serializing
+$visible = []; // only show the listed columns when serializing
+
+ModelResource::make(User::first()); // control what to pass for the Frontend from your model [extends=JsonResource]
+
+Model::query()->with(['relation' => function($query) { $query->select('id', 'name') }])
+Model::query()->with('relation:id,name')
+
+[subQuery]
+User::query()->addSelect(['last_login_at' => Login::select('created_at')
+->whereColumn('user_id', 'users.id')
+->latest()
+->take(1)])->withCasts(['last_login_at' => 'datetime']) // add the last login of a user with a subQuery when the user id of logins table is equal to id of that user in the parent users table
+
+[dynamic-relationships]
+# generating a new column of fly and making a relation with it
+class User extends Model {
+    public function lastLogin() 
+    {
+        return $this->belongsTo(Login::class);
+    }
+    public function scopeWithLastLogin($query)
+    {
+        $this->addSelect(['last_login_id' => Login::select('id')
+        ->latest()
+        ->take(1)
+        ])->with('lastLogin')
+    }
+}
+
+[loading]
+https://laracasts.com/series/eloquent-performance-patterns/episodes/6
+public function show(Feature $feature)
+{
+    $feature->load('comments.user', 'comments.feature.comments');
+
+    // alternative of the second one 
+    $feature->comments->each->setRelation('feature', $feature);
+}
+
+
 
