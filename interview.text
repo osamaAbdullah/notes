@@ -41,7 +41,7 @@ frontend Interview questions
 - what is webpack
 - what is laravel mix 
 - what is the latest version of vue what are the main new changes
-- what are slotes in vue
+- what are slots in vue
 - what is two way binding
 - what is computed and watchers in vue
 - what are the main life cycles of vue
@@ -69,12 +69,12 @@ BACKEND
 21 - How to terminate the execution of a script in PHP?
 23 - when deploying a PHP application what you will do to enhance the security?
 24 - what are generators?
-25 - dose php has multi threading? how to run two php files concurently
+25 - dose php has multi threading? how to run two php files concurrently
 
 - what is MVC?
 - what is laravel?
 - What is the templating engine used in Laravel?
-- What are available databases supported by Laravel?
+- What are supported databases in Laravel?
 - What is the artisan in laravel?
 - How to put Laravel applications in maintenance mode?
 - What are Models?
@@ -92,7 +92,7 @@ BACKEND
 - talk about a problem that you faced?
 - Lecture -> belongsToMany -> Group -> belongsTo -> Department {get department(s) of a Lecture without joins?}
 
-BATADASE
+DATABASE
 - what can you do with MySQL?
 - what are tables and views in MySQL?
 - what are indexes in MySQL? how to check details about how the query is running?
@@ -103,7 +103,7 @@ NGINX
 - what is nginx 
 - in which network layer dose nginx work
 - what is load balancing how to do it in nginx -> layer 4 and layer 7 load-balancing
-- what is revers poroxy in nginx
+- what is revers proxy in nginx
 
 
 GENERAL
@@ -121,31 +121,32 @@ GENERAL
 - Websocket
 - What is web RTC, HTTP, TCP, UDP, WS?
 
-- SSL TLS 
+- SSL(Secure Sockets Layer) 
+- TLS (Transport Layer Security )
 - hex, base64
 - Hashing (md5, sha256, argon2)
-- encription:
+- encryption:
   - Symmetric: (shared key) AES, DES, IDEA
   - Asymmetric: (public-private keys) RSA, DSA
 - signing
 
 
-Scrum 
+[Scrum] 
 
-technicals
+technical
 - what is web 
-- what are most common protocals for web 
-- what is api? list some api implementaion
+- what are most common protocols for web 
+- what is api? list some api implementation
 
 
 - talk about your self
-- what are your weeknesses 
+- what are your weaknesses 
 
 - how can you manage the team (if they have complaints about your style speech careness ...etc)
-- what if some one didnt do his tasks made it late (did klawat)
-- how you can motivate your team (good, medum, bad) ones
+- what if some one didn't do his tasks made it late (did klawat)
+- how you can motivate your team (good, medium, bad) ones
 - if your manager ask for something that is against the companies policies what you will do
-- how you will destribute the tasks
+- how you will distribute the tasks
 - what if someone insulted you infront of the others
 - if you found a minor bug just before the release what you will do?
 - if dev told you that a bug is from a third party package
@@ -156,7 +157,7 @@ technicals
 
 
 - salary
-- time for tranfer
+- time for transfer
 - work in office
 
 

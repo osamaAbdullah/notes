@@ -44,6 +44,7 @@ command mode {
     %s/<search>/<replace>/gc # search and replace need confirmation
     %s/<search>/<replace>/g # search and force  replace
 
+    :w !sudo tee % # save a file with sudo permission
 
 }
 

@@ -2,8 +2,11 @@ find / -type d | grep "directory name" // find directory
 sudo systemctl restart nginx //restart nginx
 service nginx restart //restart nginx
 
+scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2
+scp /dump_06-02-2023_22_48_08.sql root@dev.np.net-performance.online:/home/
 
-rm -dfr <repo_name> # will force remove a directory recurcivly
+
+rm -dfr <repo_name> # will force remove a directory recursively
 
 php artisan cache:clear
 php artisan route:clear
@@ -222,6 +225,8 @@ useradd osama_a -g backend_devs -G programmers -m -N
 useradd back_up -m -N
 passwd osama_a
 
+sudo chsh -s {/path/to/new/shell} {login_name_here} # change the user's default shell
+
 less /etc/passwd #list all users
 
 groupadd
@@ -273,6 +278,9 @@ chattr +a <file> #you can only append
 # synchronize time
 # may need to install wget
 date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+
+# change timezone
+sudo timedatectl set-timezone Asia/Baghdad
 
 centOS
 - mysql conf /etc/my.cnf
@@ -364,6 +372,7 @@ df -h
 usermod --lock --expiredate 1970-01-02 <username> // block (loack) user
 usermod --unlock --expiredate '' <username> // unblock (unloack)
 
+sudo ss -tupln # check the open ports
 
 rsync <options> <source> <destination> // copy file betweeb servers
 rsync -avzh /home/osama user@ip:/path/to
@@ -446,33 +455,36 @@ DNS1=8.8.8.8
 ZONE=public
 
 [configure-static-ip-centos]
-# nmtui
-# systemctl status NetworkManager.service
-or
-# nmcli -o
+    # nmtui
+    # systemctl status NetworkManager.service
+    or
+    # nmcli -o
 
-/etc/sysconfig/network-scripts/ifcfg-ens192
+    /etc/sysconfig/network-scripts/ifcfg-ens192
 
-TYPE=Ethernet
-PROXY_METHOD=none
-BROWSER_ONLY=no
-BOOTPROTO=none
-DEFROUTE=yes
-IPV4_FAILURE_FATAL=no
-IPV6INIT=yes
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_FAILURE_FATAL=no
-IPV6_ADDR_GEN_MODE=stable-privacy
-NAME=ens192
-UUID=b3d1cb4a-e103-4359-9198-7390b6ee0f2b
-DEVICE=ens192
-ONBOOT=yes
-IPADDR=95.170.206.130
-PREFIX=29
-GATEWAY=95.170.206.129
-DNS1=8.8.8.8
-IPV6_PRIVACY=no
+    TYPE=Ethernet
+    PROXY_METHOD=none
+    BROWSER_ONLY=no
+    BOOTPROTO=none
+    DEFROUTE=yes
+    IPV4_FAILURE_FATAL=no
+    IPV6INIT=yes
+    IPV6_AUTOCONF=yes
+    IPV6_DEFROUTE=yes
+    IPV6_FAILURE_FATAL=no
+    IPV6_ADDR_GEN_MODE=stable-privacy
+    NAME=ens192
+    UUID=b3d1cb4a-e103-4359-9198-7390b6ee0f2b
+    DEVICE=ens192
+    ONBOOT=yes
+    IPADDR=95.170.206.130
+    PREFIX=29
+    GATEWAY=95.170.206.129
+    DNS1=8.8.8.8
+    IPV6_PRIVACY=no
+
+    ip route list
+    ip route add 192.168.0.0/16 via 192.168.43.225 dev ens224 proto static metric 1
 
 env # to show environment variables of the system
 type
@@ -498,8 +510,15 @@ certbot certonly --manual --preferred-challenges dns
 dig -t txt +short _acme-challenge.net-performance.online
 openssl x509 -in /etc/letsencrypt/live/p.erbil-center.org/fullchain.pem
 
-# dev APIs
-certbot certonly --webroot -w /usr/share/nginx --preferred-challenges http -d dev.np.net-performance.online,000.net-performance.online,dev.az.net-performance.online,dev.bc.net-performance.online,dev.co.net-performance.online,dev.mn.net-performance.online,dev.md.net-performance.online,dev.mt.bc.net-performance.online,dev.mt.net-performance.online,dev.rc.net-performance.online
+# dev subdomains
+certbot certonly --webroot -w /usr/share/nginx --preferred-challenges http -d dev.np.net-performance.online,000.net-performance.online,dev.az.net-performance.online,dev.bc.net-performance.online,dev.co.net-performance.online,dev.mn.net-performance.online,dev.md.net-performance.online,dev.mt.bc.net-performance.online,dev.mt.net-performance.online,dev.rc.net-performance.online,p.net-performance.online
+
+# Prod subdomains
+certbot certonly --webroot -w /usr/share/nginx --preferred-challenges http -d net-performance.online,mt.net-performance.online,mt.bc.net-performance.online,mn.net-performance.online,co.net-performance.online,bc.net-performance.online,az.net-performance.online,np.net-performance.online,rc.net-performance.online,l.net-performance.online
+certbot certonly --webroot -w /usr/share/nginx --preferred-challenges http -d l.net-performance.online
+
+[center]
+certbot certonly --standalone --non-interactive --preferred-challenges http --email osama_akre@icloud.com --agree-tos -d erbil-center.org,p.erbil-center.org,s.erbil-center.org
 
 [activate-centos-8]
 timedatectl
@@ -510,3 +529,69 @@ cd /etc/yum.repos.d/
 sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 dnf update
+
+[ubuntu-setup]
+-----file------- /etc/netplan/00-installer-config.yaml
+network:
+version: 2
+renderer: networkd
+ethernets:
+    ens160:
+    addresses:
+    - 192.168.94.53/24
+    routes:
+        - to: 192.168.0.0/16
+            via: 192.168.94.1
+            metric: 100
+    nameservers:
+        addresses:
+        - 8.8.8.8
+        search: []
+    ens192:
+    addresses:
+    - 130.193.166.66/30
+    routes:
+        - to: default
+            via: 130.193.166.65
+    nameservers:
+        addresses:
+        - 8.8.8.8
+        search: []
+---------------
+netplan apply
+
+[close-laptop-lid]
+    nano /etc/systemd/logind.conf
+        HandleLidSwitch=ignore
+        HandleLidSwitchDocked=ignore
+    systemctl restart systemd-logind.service
+
+    nano /etc/default/grub
+        GRUB_CMDLINE_LINUX="consoleblank=300"
+    update-grub
+
+
+[teleport]
+    # add user 
+    tctl users add osama --roles=editor
+    # add node 
+    tctl tokens add --type=node
+
+[self-signed-certificate]
+    # Debian
+    sudo apt-get install -y ca-certificates
+    sudo cp fib.dc.crt /usr/local/share/ca-certificates
+    sudo update-ca-certificates
+
+    # RedHat
+    sudo cp fib.dc.crt /etc/pki/ca-trust/source/anchors/
+    sudo update-ca-trust
+
+ping <ip> -c 2 > < file>
+cat <file> | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" # take lines that contains "64 bytes" and split the line by " " and take the fourth item and translate(remove) ":"
+
+[bash-file]
+    for ip in `seq 1 254`; do
+    ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+    done
+& => do it in parallel

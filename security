@@ -1,0 +1,76 @@
+[penetration-test]
+1- https://pentest-tools.com/
+2- nc (net cat) -> reverse shell -> 
+3- nmap || arp-scan -l
+    $nmap -sT <ip_address> # check open ports
+    $nmap --script vuln <ip_address> # check network vulnerabilities
+    $nmap -sT -p 6000 <ip_address> # check if a specific port is open or not
+    $nmap -sn <ip_address/subnet> # check connected devices to your network
+    $nmap -T4 -p- -A <ip_address>
+4- $nslookup <domain> # get information about the domain
+5- $traceroute <domain> # get the route to the host
+6- https://github.com/sherlock-project/sherlock # search all social medias
+7- usb flash [https://github.com/dbisu/pico-ducky, usb-rubber-ducky, https://youtube.com/watch?v=e_f9p-_JWZw&feature=sharese]
+8- google-search: {
+    https://www.exploit-db.com/,
+    site:<domain>, # search specific site.
+    inurl:<term>, # search for pages that have <term> in their URL.
+    allinurl:<term>, # search for pages that have the exact <term> in their URL.
+    intext:<term>, # search for pages that have <term> in the content.
+    intitle:<term>, # search for pages that have <term> in the title.
+    filetype:<type>, # search for pages that have that file <type> in it.
+}
+9- hide a file: https://youtube.com/watch?v=fQek73drZS4&feature=shares {
+    ADS(alternate data stream)
+    steghide extract -sf <file_path>
+    steghide embed -cf <normal_file_path> -ef <file_to_be_hidden>
+}
+10- host a website in darkweb: https://youtube.com/watch?v=bllS9tkCkaM&feature=shares {
+    sudo apt install tor 
+    sudo nano /etc/tor/torrc
+        uncomment  hiddenServiceDir & hiddenServicePort
+    sudo service tor stop
+    sudo service tor start
+    sudo cat /var/lib/tor/hidden_service/hostname
+}
+11- https://github.com/Dewalt-arch/pimpmykali
+12- email finders: {
+    https://hunter.io
+    https://phonebook.cz
+    https://www.voilanorbert.com
+    https://clearbit.com # chrome extension
+}
+13- find websites to hack anf get money: https://bugcrowd.com/
+14- verify emails: {
+    https://www.emailhippo.com
+    https://email-checker.net
+}
+15- find subdomains of a domain: {
+    sublist3r
+    https://crt.sh
+    https://github.com/OWASP/Amass
+}
+16- find live subdomains: {
+    https://github.com/tomnomnom/httprobe
+}
+17- the website is build with what: {
+    https://builtwith.com 
+    https://www.wappalyzer.com
+    whatweb <domain|ip>
+}
+18- intercept traffic: {
+    https://portswigger.net/burp
+}
+19- try hacking vulnerable machines: {
+    https://www.vulnhub.com
+}
+20- scan network: {
+    netdiscover -r <ip_range>
+}
+21- vulnerabilities test: {
+    https://github.com/sullo/nikto
+    DirBuster | dirb | go buster: application designed to brute force directories and files names on web/application servers
+    Msfconsole: MSFconsole provides a command line interface to access and work with the Metasploit Framework
+    smb client: 
+    ssh <ip> -oKexAlgorithms=+diffie-hellman-group1 -c aes128-cbc
+}

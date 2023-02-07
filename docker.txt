@@ -136,6 +136,7 @@ docker inspect <image_name> # show metadata of an image
 
 docker run -it --rm --user $(id -u):$(id -g) -v $HOME:$HOME:rw -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v $PWD:$PWD:rw -w $PWD alpine/git pull
 
+docker system prune --all --volumes --force // prune
 
 postgres
 

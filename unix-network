@@ -1,0 +1,21 @@
+ifconfig (ip a) # check wired network interfaces
+iwconfig # check wireless network interfaces
+
+ip n (arp -a) # get mac address of IPs
+
+[tcpdump] => show traffic
+-i <interface> show traffic of the specified interface only
+port <port_number>  show traffic of the specified port only
+
+netstat -tan
+
+/etc/hosts # OS defined hosts
+[<ip> <domain> <alias>]
+
+traceroute <domain> # list all nodes until reaching the destination server
+
+route (ip route) (ip r ) # show all static routes
+
+route add -net <destination-range> netmask <netmask> gw <gateway> dev <interface> # add a static route
+iptables --table nat --append PREROUTING --protocol tcp --dport 80 --jump REDIRECT --to 8080 # forward one port to another
+
