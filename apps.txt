@@ -51,12 +51,14 @@ websites: {
 	firebase-Alternatives: ['https://appwrite.io/', 'https://docs.amplify.aws/', 'https://supabase.com/']
 	database-wraper: ['https://hasura.io/']
 	react-packages: ['']
+	storage-server: ['https://min.io/pricing']
 }
 
 linux: {
 	terminals: ['ohmyz.sh']
 	file-structure: ['tree']
 	process-monitors: ['supervisor', 'upstart', 'systemd']
+	logs-auto-delete: ['logrotate']
 }
 
 documentaions: {

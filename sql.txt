@@ -100,3 +100,14 @@ SELECT
 FROM information_schema.TABLES 
 WHERE table_schema = "kpi"
     AND table_name = "mob_sim_info";
+
+
+Logically, WHERE clause is calculated before SELECT. That's why you cannot use column sal in WHERE. It's not like in other languages where code is executed from top to bottom. A simplified order looks like this:
+FROM
+JOIN
+WHERE
+GROUP BY
+HAVING
+SELECT
+DISTINCT
+ORDER BY
