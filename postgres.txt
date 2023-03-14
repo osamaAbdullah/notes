@@ -85,5 +85,6 @@ cat /home/apps/local-system/prod/osama.sql | docker exec -i 5f45d9721e87 psql --
 
 
 cat /home/apps/local-system/prod/backup_db/2022-12/osama.sql | docker exec -i ab7ff6471d7a psql --username local_system_bd_laravel_app_stage local_system_bd_stage
+cat /home/ec/apps/local-system/prod/backup_db/2023-02/p_db_backup_2023-02-26__22_21_20.sql | docker exec -i 6e2d23043057 psql --username local_system_bd_laravel_app local_system_bd
 
 pg_dump --username "anonymous_feedbacks_user" --dbname "anonymous_feedbacks" --no-owner --no-privileges > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql

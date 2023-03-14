@@ -74,3 +74,7 @@
     smb client: 
     ssh <ip> -oKexAlgorithms=+diffie-hellman-group1 -c aes128-cbc
 }
+22- searchsploit: to search or a program exploit
+23- nessus: vulnerability scanner
+24- hydra: Hydra is a brute-forcing tool that helps penetration testers and ethical hackers crack the passwords of network services. Hydra can perform rapid dictionary attacks against more than 50 protocols. This includes telnet, FTP, HTTP, HTTPS, SMB, databases, and several other services.
+25- foxyproxy: FoxyProxy is an advanced proxy management tool that completely replaces Firefox's limited proxying capabilities.

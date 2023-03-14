@@ -141,3 +141,16 @@ docker exec -t ce15f9afabe6 pg_dump \
 --no-owner --no-privileges \
 --rows-per-insert=65000 --column-inserts \
 > dump_`date +%Y-%m-%d"__"%H:%M:%S`.sql
+
+Server Sent Events (SSE) VS websocket
+
+[logging]
+you can make centrlized logging system, elk or so
+and you can configure docker logging drive or whatever it called to send logs to this elastic db
+then you can visulaize it through kibana
+you can also use some log shipper fluent/filebeat to send logs to elastic
+https://docs.docker.com/config/containers/logging/configure/
+fluentd	Writes log messages to fluentd (forward input). The fluentd daemon must be running on the host machine.
+so even log drive -> fluentd -> elastic
+or docker -> filebeat -> elastic
+one of those should work
