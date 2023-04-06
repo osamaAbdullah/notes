@@ -227,6 +227,8 @@ passwd osama_a
 
 sudo chsh -s {/path/to/new/shell} {login_name_here} # change the user's default shell
 
+sudo chsh -s /bin/bash ftp # change the user's default shell
+
 less /etc/passwd #list all users
 
 groupadd
@@ -580,7 +582,7 @@ netplan apply
 [self-signed-certificate]
     # Debian
     sudo apt-get install -y ca-certificates
-    sudo cp fib.dc.crt /usr/local/share/ca-certificates
+    sudo cp performance.crt /usr/local/share/ca-certificates
     sudo update-ca-certificates
 
     # RedHat
@@ -595,3 +597,6 @@ cat <file> | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" # take lines that con
     ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
     done
 & => do it in parallel
+
+[speedtest]
+sudo apt install speedtest-cli
