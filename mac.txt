@@ -23,3 +23,6 @@ installing composer {
     mv composer.phar /usr/local/bin/composer
 }
 
+# clear cache
+sudo killall -HUP mDNSResponder
+
