@@ -177,7 +177,7 @@ kill <pid>
 
 grep ssh * #search for ssh in all files
 tail <file> #it shows last 20 lines of a large file 
-tail -n <number of lines you want to be showen> <file>
+tail -n <number of lines you want to be shown> <file>
 tail -f <file> # will show realtime updates on that file
 
 0,30 #in cronjob run in 0 and 30 minute of each hour

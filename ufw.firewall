@@ -2,3 +2,5 @@ https://www.letscloud.io/community/how-to-set-up-a-firewall-with-ufw-on-ubuntu-1
 https://www.linode.com/docs/guides/configure-firewall-with-ufw/
 
 # ufw allow in on ens160 to any port 22
+
+# sudo ufw allow in on ens160 to any port 22
